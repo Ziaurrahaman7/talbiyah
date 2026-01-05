@@ -85,7 +85,22 @@
                         </svg>
                     </div>
                    @php
-                           $shippingDetails = \App\Models\Product::getMaxShipping($id);
+                           // Use cart service for consistent shipping calculation
+                           $cartService = new \App\Services\Product\AddToCartService();
+                           $defaultAddress = null;
+                           if (Auth::check()) {
+                               $defaultAddress = \App\Models\Address::where('user_id', Auth::user()->id)->where('is_default', 1)->first();
+                           }
+                           
+                           if ($defaultAddress) {
+                               $taxShipping = $cartService->getTaxShipping($defaultAddress, 'order');
+                               $shippingDetails = [
+                                   'name' => $taxShipping['key'] ?? 'Not Applicable',
+                                   'amount' => $taxShipping['shipping'] ?? 0
+                               ];
+                           } else {
+                               $shippingDetails = ['name' => 'Not Applicable', 'amount' => 0];
+                           }
                   @endphp
                     <div class="flex justify-between items-center w-full">
                         <span class="hover:text-orange-500 cursor-pointer transition-all rtl-direction-space-location text-gray-12 text-15 dm-bold font-bold ltr:ml-2.5 rtl:mr-2.5" id="shipping-name">{{ $shippingDetails['name'] ?? __('Not Applicable') }}
