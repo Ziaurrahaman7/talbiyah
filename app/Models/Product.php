@@ -972,71 +972,16 @@ class Product extends Model
         $product = Product::where('id', $id)->first();
 
         if (!$product) {
-            \Log::info('Product not found: ' . $id);
             return ['status' => 0];
         }
 
-        \Log::info('Product shipping class: ' . $product->meta_shipping_id);
-        \Log::info('Address data: ' . json_encode($address));
-        
-        // Direct database query to check zones
-        $zones = \DB::table('shipping_zone_shipping_classes')
-            ->where('shipping_class_slug', $product->meta_shipping_id)
-            ->get();
-        \Log::info('Found zones from DB: ' . $zones->count());
-        
-        if ($zones->count() == 0) {
-            \Log::info('No zones found for shipping class: ' . $product->meta_shipping_id);
-            return ['status' => 0];
-        }
-        
-        // Dynamic shipping cost calculation from database
+        // Use same logic as checkout page
         if ($address) {
-            // Find matching zone and get cost
-            $matchingZone = \DB::table('shipping_zone_geolocales as szg')
-                ->join('shipping_zone_shipping_classes as szsc', 'szg.shipping_zone_id', '=', 'szsc.shipping_zone_id')
-                ->join('shipping_zone_shipping_methods as szsm', 'szg.shipping_zone_id', '=', 'szsm.shipping_zone_id')
-                ->where('szg.country', $address['country'])
-                ->where('szg.state', $address['state'])
-                ->where('szg.city', $address['city'])
-                ->where('szsc.shipping_class_slug', $product->meta_shipping_id)
-                ->where('szsm.status', 1)
-                ->where('szsm.shipping_method_id', 3) // Weight Based Delivery
-                ->select('szsc.cost', 'szsc.cost_type', 'szsm.method_title', 'szsm.cost as method_cost')
-                ->first();
-                
-            if ($matchingZone) {
-                $finalCost = 0;
-                
-                // Calculate based on cost type
-                if ($matchingZone->cost_type == 'cost_per_order') {
-                    $finalCost = $matchingZone->cost;
-                } elseif ($matchingZone->cost_type == 'cost_per_quantity') {
-                    $finalCost = $matchingZone->cost * 1; // qty = 1
-                } elseif ($matchingZone->cost_type == 'percent_sub_total_item_price') {
-                    $productPrice = $product->offerCheck() ? $product->sale_price : $product->regular_price;
-                    $finalCost = ($matchingZone->cost * $productPrice) / 100;
-                }
-                
-                \Log::info('Dynamic shipping matched - Zone cost: ' . $matchingZone->cost . ', Final cost: ' . $finalCost);
-                
-                return [
-                    'status' => 1,
-                    'name' => $matchingZone->method_title ?: 'Delivery',
-                    'amount' => $finalCost,
-                ];
-            }
-            
-            \Log::info('No matching zone found for address');
-        }
-
-        if ($address == null) {
-            $shipping = $product->shipping(['price' => $product->offerCheck() ? $product->sale_price : $product->regular_price, 'qty' => 1, 'from' => 'order']);
+            $addressObj = (object) $address;
+            $shipping = $product->shipping(['price' => $product->offerCheck() ? $product->sale_price : $product->regular_price, 'qty' => 1, 'address' => $addressObj, 'from' => 'order']);
         } else {
-            $shipping = $product->shipping(['price' => $product->offerCheck() ? $product->sale_price : $product->regular_price, 'qty' => 1, 'address' => (object) $address, 'from' => 'order']);
+            $shipping = $product->shipping(['price' => $product->offerCheck() ? $product->sale_price : $product->regular_price, 'qty' => 1, 'from' => 'order']);
         }
-
-        \Log::info('Shipping calculation result: ' . json_encode($shipping));
 
         if (is_array($shipping) && count($shipping) > 0) {
             return [
@@ -1046,9 +991,7 @@ class Product extends Model
             ];
         }
 
-        return [
-            'status' => 0,
-        ];
+        return ['status' => 0];
     }
 
     /**

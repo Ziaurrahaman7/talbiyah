@@ -93,11 +93,18 @@ class OrderController extends Controller
 
             $data['addresses'] = [];
             $data['defaultAddresses'] = null;
-            $taxShipping = $cartService->getTaxShipping();
-
+            
+            // Only calculate shipping if user has selected address or provided address
+            $taxShipping = ['tax' => 0, 'shipping' => [], 'displayTaxTotal' => ''];
+            
             if (Auth::check()) {
                 $data['addresses'] = Address::getAll()->where('user_id', Auth::user()->id);
                 $data['defaultAddresses'] = Address::getAll()->where('user_id', Auth::user()->id)->where('is_default', 1)->first();
+                
+                // Only calculate shipping if default address exists
+                if ($data['defaultAddresses']) {
+                    $taxShipping = $cartService->getTaxShipping($data['defaultAddresses']);
+                }
             }
 
             $data['countries'] = Country::getAll();

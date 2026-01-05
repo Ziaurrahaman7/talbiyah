@@ -349,7 +349,10 @@ class AddToCartService
                                 ! isset($this->shippingMethod[$shipping['title']]) ? $this->shippingMethod[$shipping['title']] = $methodCost + $maxZoneCost : '';
                             }
                         } else {
-                            $this->shippingMethod[$shipping['title']] = isset($this->shippingMethod[$shipping['title']]) ? $this->shippingMethod[$shipping['title']] + $methodCost + $shipping['zone_cost'] : $methodCost + $shipping['zone_cost'];
+                            // For class-based calculation, use highest zone cost instead of adding
+                            $currentCost = $methodCost + $shipping['zone_cost'];
+                            $this->shippingMethod[$shipping['title']] = isset($this->shippingMethod[$shipping['title']]) ? 
+                                max($this->shippingMethod[$shipping['title']], $currentCost) : $currentCost;
                         }
 
                     } else {
