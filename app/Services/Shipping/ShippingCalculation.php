@@ -70,14 +70,25 @@ class ShippingCalculation
         $quantity = $this->quantity;
         $price = $this->price;
 
-        $flag = $this->checkApplicableAddress($zone, $compareAddress);
+        // Check if zone has ShippingZoneGeolocales relationship
+        if (get_class($zone) === 'Modules\\Shipping\\Entities\\ShippingZoneShippingClass') {
+            $flag = $this->checkApplicableAddress($zone->shippingZone, $compareAddress);
+        } else {
+            $flag = $this->checkApplicableAddress($zone, $compareAddress);
+        }
+        
         $methods = [];
 
         if ($flag == true) {
+            // Get shipping methods
+            $shippingMethods = get_class($zone) === 'Modules\\Shipping\\Entities\\ShippingZoneShippingClass' ? 
+                $zone->shippingZone->shippingZoneShippingMethods : 
+                $zone->ShippingZoneShippingMethod;
 
-            foreach ($zone->ShippingZoneShippingMethod as $method) {
+            foreach ($shippingMethods as $method) {
                 $methodCost = 0;
                 $zoneCost = 0;
+                
                 if ($method->status == 1) {
                     if ($method->shipping_method_id == 1) {
                         $allowFreeShipping = false;
@@ -166,7 +177,7 @@ class ShippingCalculation
             }
 
         }
-
+        
         return $methods;
     }
 
@@ -177,13 +188,10 @@ class ShippingCalculation
      */
     public function checkApplicableAddress($shippingAddress = null, $compareAddress = null)
     {
-        $flag = true;
-
         foreach ($shippingAddress->ShippingZoneGeolocales as $geolocale) {
             $flag = true;
 
             if ($geolocale->country != '') {
-
                 if (! is_null($compareAddress)) {
                     if (strtolower($geolocale->country) != strtolower($compareAddress->country)) {
                         $flag = false;
@@ -191,11 +199,9 @@ class ShippingCalculation
                 } else {
                     $flag = false;
                 }
-
             }
 
-            if (($geolocale->state) != '') {
-
+            if ($flag && ($geolocale->state) != '') {
                 if (! is_null($compareAddress)) {
                     if ($geolocale->state != $compareAddress->state) {
                         $flag = false;
@@ -203,11 +209,9 @@ class ShippingCalculation
                 } else {
                     $flag = false;
                 }
-
             }
 
-            if ($geolocale->city != '') {
-
+            if ($flag && $geolocale->city != '') {
                 if (! is_null($compareAddress)) {
                     if ($geolocale->city != $compareAddress->city) {
                         $flag = false;
@@ -215,28 +219,24 @@ class ShippingCalculation
                 } else {
                     $flag = false;
                 }
-
             }
 
-            if ($geolocale->zip != '') {
-
+            if ($flag && $geolocale->zip != '' && !is_null($compareAddress->post_code)) {
                 if (! is_null($compareAddress)) {
                     if ($geolocale->zip != $compareAddress->post_code) {
                         $flag = false;
                     }
-
                 } else {
                     $flag = false;
                 }
-
             }
 
             if ($flag) {
-                return $flag;
+                return true;
             }
         }
-
-        return $flag;
+        
+        return false;
     }
 
     /**

@@ -2,7 +2,7 @@
 @section('page_title', __('Shipping'))
 
 @section('css')
-    <link rel="stylesheet" href="{{ asset('Modules/Shipping/Resources/assets/css/shipping.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('Modules/Shipping/css/shipping.min.css') }}">
 @endsection
 
 @section('content')
@@ -73,5 +73,5 @@
     </script>
     <script src="{{ asset('dist/js/condition.min.js') }}"></script>
     <script src="{{ asset('dist/js/xss.min.js') }}"></script>
-    <script src="{{ asset('Modules/Shipping/Resources/assets/js/shipping.min.js') }}"></script>
+    <script src="{{ asset('Modules/Shipping/js/shipping.min.js') }}"></script>
 @endsection

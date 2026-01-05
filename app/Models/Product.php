@@ -908,13 +908,15 @@ class Product extends Model
                     $defaultAddress = Address::getAll()->where('id', $defaultAddress)->first();
                 }
 
-                $shippingZones = ShippingZoneShippingClass::where('shipping_class_slug', $this->meta_shipping_id)->get();
+                $shippingZones = ShippingZoneShippingClass::where('shipping_class_slug', $this->meta_shipping_id)
+                    ->with(['shippingZone.shippingZoneGeolocales', 'shippingZone.shippingZoneShippingMethods'])
+                    ->get();
                 $shippingData = [];
 
-                foreach ($shippingZones as $zone) {
-
+                foreach ($shippingZones as $zoneClass) {
+                    $zone = $zoneClass->shippingZone;
                     if (! empty($zone)) {
-                        $shipping  = new ShippingCalculation($zone, $defaultAddress, $params['qty'], $params['from'] ?? null, $params['price'] ?? 0);
+                        $shipping  = new ShippingCalculation($zoneClass, $defaultAddress, $params['qty'], $params['from'] ?? null, $params['price'] ?? 0);
                         $shippingData = $shipping->calculateShipping();
 
                         if (is_array($shippingData) && count($shippingData) > 0) {
@@ -951,6 +953,10 @@ class Product extends Model
     {
         $product = Product::where('id', $id)->first();
 
+        if (!$product) {
+            return ['status' => 0];
+        }
+
         if ($address == null) {
             $shipping = $product->shipping(['price' => $product->offerCheck() ? $product->sale_price : $product->regular_price, 'qty' => 1, 'from' => 'order']);
         } else {
@@ -958,7 +964,6 @@ class Product extends Model
         }
 
         if (is_array($shipping) && count($shipping) > 0) {
-
             return [
                 'status' => 1,
                 'name' => array_search(max($shipping), $shipping),
