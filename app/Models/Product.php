@@ -15,7 +15,7 @@ namespace App\Models;
 
 use App\Enums\ProductStatus;
 use App\Enums\ProductType;
-use App\Services\Shipping\ShippingCalculationFixed;
+use App\Services\Shipping\ShippingCalculationNew;
 use App\Services\Tax\TaxCalculation;
 use App\Traits\ModelTrait;
 use App\Traits\ModelTraits\hasFiles;
@@ -911,13 +911,16 @@ class Product extends Model
                 $shippingZones = ShippingZoneShippingClass::where('shipping_class_slug', $this->meta_shipping_id)
                     ->with(['shippingZone.shippingZoneGeolocales', 'shippingZone.shippingZoneShippingMethods'])
                     ->get();
+                \Log::info('Found shipping zones count: ' . $shippingZones->count());
                 $shippingData = [];
 
                 foreach ($shippingZones as $zoneClass) {
                     $zone = $zoneClass->shippingZone;
+                    \Log::info('Processing zone: ' . ($zone ? $zone->id : 'NULL'));
                     if (! empty($zone)) {
-                        $shipping  = new ShippingCalculationFixed($zoneClass, $defaultAddress, $params['qty'], $params['from'] ?? null, $params['price'] ?? 0);
+                        $shipping  = new ShippingCalculationNew($zoneClass, $defaultAddress, $params['qty'], $params['from'] ?? null, $params['price'] ?? 0);
                         $shippingData = $shipping->calculateShipping();
+                        \Log::info('Zone shipping result: ' . json_encode($shippingData));
 
                         if (is_array($shippingData) && count($shippingData) > 0) {
                             return $shippingData;
@@ -960,6 +963,57 @@ class Product extends Model
 
         \Log::info('Product shipping class: ' . $product->meta_shipping_id);
         \Log::info('Address data: ' . json_encode($address));
+        
+        // Direct database query to check zones
+        $zones = \DB::table('shipping_zone_shipping_classes')
+            ->where('shipping_class_slug', $product->meta_shipping_id)
+            ->get();
+        \Log::info('Found zones from DB: ' . $zones->count());
+        
+        if ($zones->count() == 0) {
+            \Log::info('No zones found for shipping class: ' . $product->meta_shipping_id);
+            return ['status' => 0];
+        }
+        
+        // Dynamic shipping cost calculation from database
+        if ($address) {
+            // Find matching zone and get cost
+            $matchingZone = \DB::table('shipping_zone_geolocales as szg')
+                ->join('shipping_zone_shipping_classes as szsc', 'szg.shipping_zone_id', '=', 'szsc.shipping_zone_id')
+                ->join('shipping_zone_shipping_methods as szsm', 'szg.shipping_zone_id', '=', 'szsm.shipping_zone_id')
+                ->where('szg.country', $address['country'])
+                ->where('szg.state', $address['state'])
+                ->where('szg.city', $address['city'])
+                ->where('szsc.shipping_class_slug', $product->meta_shipping_id)
+                ->where('szsm.status', 1)
+                ->where('szsm.shipping_method_id', 3) // Weight Based Delivery
+                ->select('szsc.cost', 'szsc.cost_type', 'szsm.method_title', 'szsm.cost as method_cost')
+                ->first();
+                
+            if ($matchingZone) {
+                $finalCost = 0;
+                
+                // Calculate based on cost type
+                if ($matchingZone->cost_type == 'cost_per_order') {
+                    $finalCost = $matchingZone->cost;
+                } elseif ($matchingZone->cost_type == 'cost_per_quantity') {
+                    $finalCost = $matchingZone->cost * 1; // qty = 1
+                } elseif ($matchingZone->cost_type == 'percent_sub_total_item_price') {
+                    $productPrice = $product->offerCheck() ? $product->sale_price : $product->regular_price;
+                    $finalCost = ($matchingZone->cost * $productPrice) / 100;
+                }
+                
+                \Log::info('Dynamic shipping matched - Zone cost: ' . $matchingZone->cost . ', Final cost: ' . $finalCost);
+                
+                return [
+                    'status' => 1,
+                    'name' => $matchingZone->method_title ?: 'Delivery',
+                    'amount' => $finalCost,
+                ];
+            }
+            
+            \Log::info('No matching zone found for address');
+        }
 
         if ($address == null) {
             $shipping = $product->shipping(['price' => $product->offerCheck() ? $product->sale_price : $product->regular_price, 'qty' => 1, 'from' => 'order']);
