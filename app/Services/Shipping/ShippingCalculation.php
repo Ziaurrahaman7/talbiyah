@@ -11,7 +11,7 @@ namespace App\Services\Shipping;
 
 use Cart;
 
-class ShippingCalculation
+class ShippingCalculationFixed
 {
     /**
      * store zone
@@ -70,24 +70,34 @@ class ShippingCalculation
         $quantity = $this->quantity;
         $price = $this->price;
 
+        \Log::info('ShippingCalculation - Zone type: ' . get_class($zone));
+        \Log::info('ShippingCalculation - Zone ID: ' . $zone->id);
+        
         // Check if zone has ShippingZoneGeolocales relationship
         if (get_class($zone) === 'Modules\\Shipping\\Entities\\ShippingZoneShippingClass') {
+            \Log::info('Using zone->shippingZone ShippingZoneGeolocales');
             $flag = $this->checkApplicableAddress($zone->shippingZone, $compareAddress);
         } else {
+            \Log::info('Using zone ShippingZoneGeolocales');
             $flag = $this->checkApplicableAddress($zone, $compareAddress);
         }
         
         $methods = [];
 
         if ($flag == true) {
+            \Log::info('Address flag is true, checking methods');
+            
             // Get shipping methods
             $shippingMethods = get_class($zone) === 'Modules\\Shipping\\Entities\\ShippingZoneShippingClass' ? 
                 $zone->shippingZone->shippingZoneShippingMethods : 
                 $zone->ShippingZoneShippingMethod;
+                
+            \Log::info('Found methods count: ' . $shippingMethods->count());
 
             foreach ($shippingMethods as $method) {
                 $methodCost = 0;
                 $zoneCost = 0;
+                \Log::info('Processing method: ' . $method->method_title . ', Status: ' . $method->status);
                 
                 if ($method->status == 1) {
                     if ($method->shipping_method_id == 1) {
@@ -152,6 +162,8 @@ class ShippingCalculation
                             }
 
                         }
+                        
+                        \Log::info('Method cost: ' . $methodCost . ', Zone cost: ' . $zoneCost);
 
                         if ($from == 'order') {
                             ! empty($method->method_title) ? $methods[$method->method_title] = $methodCost + $zoneCost : '';
@@ -176,8 +188,11 @@ class ShippingCalculation
                 }
             }
 
+        } else {
+            \Log::info('Address flag is false, no shipping available');
         }
         
+        \Log::info('Final methods: ' . json_encode($methods));
         return $methods;
     }
 
@@ -188,13 +203,21 @@ class ShippingCalculation
      */
     public function checkApplicableAddress($shippingAddress = null, $compareAddress = null)
     {
+        \Log::info('Checking address for zone: ' . $shippingAddress->id);
+        \Log::info('Compare address: ' . json_encode($compareAddress));
+
         foreach ($shippingAddress->ShippingZoneGeolocales as $geolocale) {
             $flag = true;
+            
+            \Log::info('Checking geolocale: Country=' . $geolocale->country . ', State=' . $geolocale->state . ', City=' . $geolocale->city);
 
             if ($geolocale->country != '') {
                 if (! is_null($compareAddress)) {
                     if (strtolower($geolocale->country) != strtolower($compareAddress->country)) {
                         $flag = false;
+                        \Log::info('Country mismatch: ' . $geolocale->country . ' vs ' . $compareAddress->country);
+                    } else {
+                        \Log::info('Country matched');
                     }
                 } else {
                     $flag = false;
@@ -205,6 +228,9 @@ class ShippingCalculation
                 if (! is_null($compareAddress)) {
                     if ($geolocale->state != $compareAddress->state) {
                         $flag = false;
+                        \Log::info('State mismatch: ' . $geolocale->state . ' vs ' . $compareAddress->state);
+                    } else {
+                        \Log::info('State matched');
                     }
                 } else {
                     $flag = false;
@@ -215,6 +241,9 @@ class ShippingCalculation
                 if (! is_null($compareAddress)) {
                     if ($geolocale->city != $compareAddress->city) {
                         $flag = false;
+                        \Log::info('City mismatch: ' . $geolocale->city . ' vs ' . $compareAddress->city);
+                    } else {
+                        \Log::info('City matched');
                     }
                 } else {
                     $flag = false;
@@ -225,6 +254,9 @@ class ShippingCalculation
                 if (! is_null($compareAddress)) {
                     if ($geolocale->zip != $compareAddress->post_code) {
                         $flag = false;
+                        \Log::info('ZIP mismatch: ' . $geolocale->zip . ' vs ' . $compareAddress->post_code);
+                    } else {
+                        \Log::info('ZIP matched');
                     }
                 } else {
                     $flag = false;
@@ -232,10 +264,12 @@ class ShippingCalculation
             }
 
             if ($flag) {
+                \Log::info('Address matched for geolocale!');
                 return true;
             }
         }
         
+        \Log::info('No address match found');
         return false;
     }
 

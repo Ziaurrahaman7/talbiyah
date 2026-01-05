@@ -15,7 +15,7 @@ namespace App\Models;
 
 use App\Enums\ProductStatus;
 use App\Enums\ProductType;
-use App\Services\Shipping\ShippingCalculation;
+use App\Services\Shipping\ShippingCalculationFixed;
 use App\Services\Tax\TaxCalculation;
 use App\Traits\ModelTrait;
 use App\Traits\ModelTraits\hasFiles;
@@ -916,7 +916,7 @@ class Product extends Model
                 foreach ($shippingZones as $zoneClass) {
                     $zone = $zoneClass->shippingZone;
                     if (! empty($zone)) {
-                        $shipping  = new ShippingCalculation($zoneClass, $defaultAddress, $params['qty'], $params['from'] ?? null, $params['price'] ?? 0);
+                        $shipping  = new ShippingCalculationFixed($zoneClass, $defaultAddress, $params['qty'], $params['from'] ?? null, $params['price'] ?? 0);
                         $shippingData = $shipping->calculateShipping();
 
                         if (is_array($shippingData) && count($shippingData) > 0) {
@@ -954,14 +954,20 @@ class Product extends Model
         $product = Product::where('id', $id)->first();
 
         if (!$product) {
+            \Log::info('Product not found: ' . $id);
             return ['status' => 0];
         }
+
+        \Log::info('Product shipping class: ' . $product->meta_shipping_id);
+        \Log::info('Address data: ' . json_encode($address));
 
         if ($address == null) {
             $shipping = $product->shipping(['price' => $product->offerCheck() ? $product->sale_price : $product->regular_price, 'qty' => 1, 'from' => 'order']);
         } else {
             $shipping = $product->shipping(['price' => $product->offerCheck() ? $product->sale_price : $product->regular_price, 'qty' => 1, 'address' => (object) $address, 'from' => 'order']);
         }
+
+        \Log::info('Shipping calculation result: ' . json_encode($shipping));
 
         if (is_array($shipping) && count($shipping) > 0) {
             return [

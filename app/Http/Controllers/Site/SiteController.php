@@ -513,12 +513,16 @@ class SiteController extends Controller
      */
     public function getShipping(Request $request)
     {
+        \Log::info('Frontend request data: ' . json_encode($request->all()));
+        
         $address = [
             'country' => $request->country,
             'state' => $request->state,
             'city' => $request->city,
             'post_code' => null,
         ];
+        
+        \Log::info('Formatted address: ' . json_encode($address));
 
         return Product::getMaxShipping($request->product_id, $address);
     }
