@@ -52,7 +52,7 @@ return [
         'storage/logs/'             => 775,
         'bootstrap/cache/'          => 775,
         'resources/lang/'           => 777,
-        'public/js/lang/'           => 777,
+        'distjs/lang/'           => 777,
         'Modules'                   => 777,
         '.env'                      => 666,
     ],

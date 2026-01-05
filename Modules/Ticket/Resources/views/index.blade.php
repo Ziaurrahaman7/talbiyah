@@ -1,9 +1,9 @@
 @extends('vendor.layouts.app')
 @section('page_title', __('Supports'))
 @section('css')
-    <link rel="stylesheet" href="{{ asset('public/dist/plugins/bootstrap-daterangepicker/daterangepicker.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('dist/plugins/bootstrap-daterangepicker/daterangepicker.min.css') }}">
     <link rel="stylesheet" href="{{ asset('Modules/Ticket/Resources/assets/css/style.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('public/dist/css/vendor-responsiveness.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('dist/css/vendor-responsiveness.min.css') }}">
 @endsection
 
 @section('content')
@@ -77,7 +77,7 @@
         var startDate = "{!! isset($from) ? $from : 'undefined' !!}";
         var endDate = "{!! isset($to) ? $to : 'undefined' !!}";
     </script>
-    <script src="{{ asset('public/dist/js/moment.min.js') }}"></script>
-    <script src="{{ asset('public/dist/plugins/bootstrap-daterangepicker/daterangepicker.min.js') }}"></script>
+    <script src="{{ asset('dist/js/moment.min.js') }}"></script>
+    <script src="{{ asset('dist/plugins/bootstrap-daterangepicker/daterangepicker.min.js') }}"></script>
     <script src="{{ asset('Modules/Ticket/Resources/assets/js/message.min.js') }}"></script>
 @endsection

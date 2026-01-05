@@ -1,7 +1,7 @@
 @extends('vendor.layouts.app')
 @section('page_title', __('Show :x', ['x' => __('Review')]))
 @section('css')
-    <link rel="stylesheet" href="{{ asset('public/dist/plugins/lightbox/css/lightbox.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('dist/plugins/lightbox/css/lightbox.min.css') }}">
 @endsection
 @section('content')
     <!-- Main content -->
@@ -119,6 +119,6 @@
 @endsection
 
 @section('js')
-    <script src="{{ asset('public/dist/plugins/lightbox/js/lightbox.min.js') }}"></script>
-    <script src="{{ asset('public/dist/js/custom/review.min.js') }}"></script>
+    <script src="{{ asset('dist/plugins/lightbox/js/lightbox.min.js') }}"></script>
+    <script src="{{ asset('dist/js/custom/review.min.js') }}"></script>
 @endsection

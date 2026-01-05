@@ -34,7 +34,7 @@ class AcceptRefundRequestNotification extends Notification
      *
      * @var string
      */
-    public static $image = 'public/frontend/img/refund.png';
+    public static $image = 'frontend/img/refund.png';
 
     public function __construct($request)
     {

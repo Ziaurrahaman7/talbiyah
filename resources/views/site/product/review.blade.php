@@ -5,7 +5,7 @@
             <div class=" mt-8 flex">
                 <div class="flex-shrink-0 flex flex-col">
                     <img class="w-10 h-10 md:w-14 md:h-14 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 flex-shrink-0 ltr:mr-4 rtl:ml-4"
-                        src="{{ isset($review->user) ? $review->user->fileUrl() : asset('public/dist/img/default-image.png') }}"
+                        src="{{ isset($review->user) ? $review->user->fileUrl() : asset('dist/img/default-image.png') }}"
                         alt="{{ __('Image') }}">
                 </div>
                 <div class="flex-grow rtl-direction-space-review">

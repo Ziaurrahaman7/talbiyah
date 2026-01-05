@@ -121,6 +121,6 @@
 </div>
 @endsection
 @section('js')
-    <script src="{{ asset('public/dist/js/custom/validation.min.js') }}"></script>
+    <script src="{{ asset('dist/js/custom/validation.min.js') }}"></script>
     <script src="{{ asset('Modules/Upgrader/Resources/assets/js/update.min.js') }}"></script>
 @endsection

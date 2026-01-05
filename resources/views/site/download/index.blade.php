@@ -89,5 +89,5 @@
     <script>
         var isFound = "{{ $isFound }}";
     </script>
-    <script src="{{ asset('public/dist/js/custom/site/user_download.min.js') }}"></script>
+    <script src="{{ asset('dist/js/custom/site/user_download.min.js') }}"></script>
 @endsection

@@ -97,7 +97,7 @@ class VendorController extends Controller
         if (! empty($vendorId)) {
             // File Upload
             if (isset($request->logo) && ! empty($request->logo) && $request->hasFile('logo')) {
-                $path = createDirectory('public/uploads/vendor');
+                $path = createDirectory('distuploads/vendor');
                 $fileIdList = (new File())->store(
                     [$request->logo],
                     $path,
@@ -146,12 +146,12 @@ class VendorController extends Controller
                     $fileIds = array_column(json_decode(json_encode(File::Where(['object_type' => 'VENDOR', 'object_id' => $id])->get(['id'])), true), 'id');
                     $oldFileName = isset($fileIds) && ! empty($fileIds) ? File::find($fileIds[0])->file_name : null;
                     if (isset($fileIds) && ! empty($fileIds)) {
-                        (new File())->deleteFiles('VENDOR', $id, ['ids' => [$fileIds], 'isExceptId' => false], $path = 'public/uploads/vendor');
+                        (new File())->deleteFiles('VENDOR', $id, ['ids' => [$fileIds], 'isExceptId' => false], $path = 'distuploads/vendor');
                     }
                     //end region
                     //region store files
                     if (isset($id) && ! empty($id) && $request->hasFile('logo')) {
-                        $path = createDirectory('public/uploads/vendor');
+                        $path = createDirectory('distuploads/vendor');
                         $fileIdList = (new File())->store([$request->logo], $path, 'VENDOR', $id, ['isUploaded' => false, 'isOriginalNameRequired' => true, 'resize' => false]);
                         \Cache::forget(config('cache.prefix') . '-vendor-logo-' . $id);
                     }

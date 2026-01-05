@@ -1,6 +1,6 @@
 @extends('admin.layouts.app')
 @section('css')
-    <link rel="stylesheet" href="{{ asset('public/dist/css/user-list.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('dist/css/user-list.min.css') }}">
 @endsection
 @section('page_title', __('Users'))
 @section('content')
@@ -50,6 +50,6 @@
         var csv = "{{ in_array('App\Http\Controllers\UserController@csv', $prms) ? '1' : '0' }}";
     </script>
 
-    <script src="{{ asset('public/dist/js/custom/permission.min.js') }}"></script>
-    <script src="{{ asset('public/dist/js/custom/user.min.js') }}"></script>
+    <script src="{{ asset('dist/js/custom/permission.min.js') }}"></script>
+    <script src="{{ asset('dist/js/custom/user.min.js') }}"></script>
 @endsection

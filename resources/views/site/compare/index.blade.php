@@ -229,12 +229,12 @@
                     </table>
                     <div id="compareEmpty" class="flex justify-center items-center flex-col mt-10 mb-20 {{ \App\Compare\Compare::totalProduct() > 0 ? 'display-none' : '' }}">
                         <div>
-                            <img class="neg-transition-scale" src="{{ asset('public/frontend/assets/img/compare/emp-com.svg')}}" alt="{{ __('Image') }}">
+                            <img class="neg-transition-scale" src="{{ asset('frontend/assets/img/compare/emp-com.svg')}}" alt="{{ __('Image') }}">
                         </div>
                         <div>
                             <span class="block text-center dm-sans font-medium text-gray-10 text-xl mt-7">{{ __('There are no products added for comparison yet.') }}</span>
                              <span class="text-center block dm-sans font-medium text-gray-10 text-sm mt-3">{{ __('To compare products') }},</span>
-                            <span class="text-center block dm-sans font-medium text-gray-10 text-sm"> <a href="javascript:void(0)"><img class="inline px-1 cursor-pointer neg-transition-scale" src="{{ asset('public/frontend/assets/img/compare/empty-click.svg')}}" alt="{{ __('Image') }}"></a> {{ __('click on the button on the product page') }}.</span>
+                            <span class="text-center block dm-sans font-medium text-gray-10 text-sm"> <a href="javascript:void(0)"><img class="inline px-1 cursor-pointer neg-transition-scale" src="{{ asset('frontend/assets/img/compare/empty-click.svg')}}" alt="{{ __('Image') }}"></a> {{ __('click on the button on the product page') }}.</span>
                         </div>
                     </div>
                 </div>
@@ -246,6 +246,6 @@
 
 @endsection
 @section('js')
-    <script src="{{ asset('public/dist/js/custom/site/wishlist.min.js') }}"></script>
-    <script src="{{ asset('public/dist/js/custom/site/compare.min.js') }}"></script>
+    <script src="{{ asset('dist/js/custom/site/wishlist.min.js') }}"></script>
+    <script src="{{ asset('dist/js/custom/site/compare.min.js') }}"></script>
 @endsection

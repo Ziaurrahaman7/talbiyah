@@ -192,18 +192,18 @@ class UserController extends Controller
                             $fileIds     = array_column(json_decode(json_encode(File::Where(['object_type' => 'USER', 'object_id' => $id])->get(['id'])), true), 'id');
                             $oldFileName = isset($fileIds) && ! empty($fileIds) ? File::find($fileIds[0])->file_name : null;
                             if (isset($fileIds) && ! empty($fileIds)) {
-                                (new File())->deleteFiles('USER', $id, ['ids' => [$fileIds], 'isExceptId' => false], $path = 'public/uploads/user');
+                                (new File())->deleteFiles('USER', $id, ['ids' => [$fileIds], 'isExceptId' => false], $path = 'distuploads/user');
                             }
                             //end region
 
                             //region store files
                             if (isset($id) && ! empty($id) && $request->hasFile('attachment')) {
-                                $path       = createDirectory('public/uploads/user');
+                                $path       = createDirectory('distuploads/user');
                                 $fileIdList = (new File())->store([$request->attachment], $path, 'USER', $id, ['isUploaded' => false, 'isOriginalNameRequired' => true, 'resize' => false]);
                                 if (isset($fileIdList[0]) && ! empty($fileIdList[0])) {
                                     $uploadedFileName = File::find($fileIdList[0])->file_name;
                                     $uploadedFilePath = asset($path . '/' . $uploadedFileName);
-                                    $thumbnailPath    = createDirectory('public/uploads/user/thumbnail');
+                                    $thumbnailPath    = createDirectory('distuploads/user/thumbnail');
                                     (new File())->resizeImageThumbnail($uploadedFilePath, $uploadedFileName, $thumbnailPath, $oldFileName);
 
                                     Cache::forget(config('cache.prefix') . '-user-0-avatar-' . $id);

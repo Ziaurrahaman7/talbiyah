@@ -6,20 +6,20 @@ $(function () {
         "collapsedNavbar=" +
         $(".pcoded-navbar").hasClass("navbar-collapsed").toString();
 
-    if ($('.select2default').length > 0) {
+    if ($(".select2default").length > 0) {
         $(".select2default").select2();
     }
-    if ($('.select2-hide-search').length > 0) {
+    if ($(".select2-hide-search").length > 0) {
         $(".select2-hide-search").select2({
-            minimumResultsForSearch: Infinity
+            minimumResultsForSearch: Infinity,
         });
     }
-    });
+});
 
 // customer_header.blade.php
-$('.lang').on('click', function() {
-    var lang = $(this).data('shortname');
-    var url = ADMIN_SITE_URL + '/change-lang';
+$(".lang").on("click", function () {
+    var lang = $(this).data("shortname");
+    var url = ADMIN_SITE_URL + "/change-lang";
     $.ajax({
         url: url,
         data: {
@@ -32,8 +32,14 @@ $('.lang').on('click', function() {
             if (data == 1) {
                 location.reload();
             }
-            if (data.status == 'info') {
-                $('.top-notification').removeClass('d-none').find('.alert').addClass('alert-info').removeClass('alert-danger').find('.alertText').text(data.message);
+            if (data.status == "info") {
+                $(".top-notification")
+                    .removeClass("d-none")
+                    .find(".alert")
+                    .addClass("alert-info")
+                    .removeClass("alert-danger")
+                    .find(".alertText")
+                    .text(data.message);
             }
         },
         error: function (xhr, desc, err) {
@@ -47,7 +53,7 @@ $(document).on("click", "#itemNotifications", function () {
     $("#notifications").html(
         '<img id="itemNotificationsLoader" src="' +
             SITE_URL +
-            '/public/dist/img/loader/spiner.gif" />'
+            '/dist/img/loader/spiner.gif" />'
     );
     $.ajax({
         url: SITE_URL + "/item-notifications",
@@ -79,7 +85,6 @@ $(document).on("click", "#itemNotifications", function () {
     });
 });
 
-
 /**
  * Dashboard POPUP handler
  */
@@ -88,7 +93,6 @@ $(function () {
     const popUpContent = $(".dash-popup-modal .card-content");
     const popupLoader = $(".dash-popup-modal .card-loader");
     const dashboardPopupData = {};
-
 
     $(document).on("mouseenter", ".has-dash-popup", function (event) {
         setTimeout(() => {
@@ -189,114 +193,133 @@ $(function () {
     }
 });
 
-let currentValue = null ;
-let buttonValue = '';
-let deleteValue = $('#confirmDeleteSubmitBtn').text();
+let currentValue = null;
+let buttonValue = "";
+let deleteValue = $("#confirmDeleteSubmitBtn").text();
 
-$(document).on('submit', 'form', function() {
+$(document).on("submit", "form", function () {
     if ($(this).hasClass("silent-form")) {
         return;
     }
     currentValue = $(this);
-    buttonValue = $(this).find(':submit').text();
-   let buttonText = buttonValue.toLowerCase().trim();
+    buttonValue = $(this).find(":submit").text();
+    let buttonText = buttonValue.toLowerCase().trim();
     if (!this.hasAttribute("onsubmit")) {
-
-       if (buttonText == 'update') {
-            setText($(this), 'Updating')
-        } else if (buttonText == 'save') {
-            setText($(this), 'Saving')
-        } else if (buttonText == 'submit') {
-            setText($(this), 'Submitting')
-        } else if (buttonText == 'open') {
-            setText($(this), 'Opening')
-        }else if (buttonText == 'reply') {
-            setText($(this), 'Replying')
-        } else if (buttonText == 'create') {
-            setText($(this), 'Creating')
+        if (buttonText == "update") {
+            setText($(this), "Updating");
+        } else if (buttonText == "save") {
+            setText($(this), "Saving");
+        } else if (buttonText == "submit") {
+            setText($(this), "Submitting");
+        } else if (buttonText == "open") {
+            setText($(this), "Opening");
+        } else if (buttonText == "reply") {
+            setText($(this), "Replying");
+        } else if (buttonText == "create") {
+            setText($(this), "Creating");
         } else {
-            setText($(this), buttonValue)
+            setText($(this), buttonValue);
         }
-        $(this).find(':submit').addClass('disabled-btn');
+        $(this).find(":submit").addClass("disabled-btn");
     }
-
 });
 
 function setText(selector, value) {
-    selector.find(':submit').text(jsLang(value)).append(`<div class="spinner-border spinner-border-sm ml-2" role="status"></div>`);
+    selector
+        .find(":submit")
+        .text(jsLang(value))
+        .append(
+            `<div class="spinner-border spinner-border-sm ml-2" role="status"></div>`
+        );
 }
 
-$(document).on('click', '#confirmDeleteSubmitBtn', function() {
-    deleteValue = $(this).text()
+$(document).on("click", "#confirmDeleteSubmitBtn", function () {
+    deleteValue = $(this).text();
     let buttonText = deleteValue.toLowerCase().trim();
-    $(this).text(jsLang('Deleting')).append(`<div class="spinner-border spinner-border-sm ml-2" role="status"></div>`).addClass('disabled-btn');
-    if (buttonText == 'yes') {
-        $(this).text(jsLang('Updating')).append(`<div class="spinner-border spinner-border-sm ml-2" role="status"></div>`).addClass('disabled-btn');
+    $(this)
+        .text(jsLang("Deleting"))
+        .append(
+            `<div class="spinner-border spinner-border-sm ml-2" role="status"></div>`
+        )
+        .addClass("disabled-btn");
+    if (buttonText == "yes") {
+        $(this)
+            .text(jsLang("Updating"))
+            .append(
+                `<div class="spinner-border spinner-border-sm ml-2" role="status"></div>`
+            )
+            .addClass("disabled-btn");
     }
-
 });
 
-$( document ).ajaxStop(function() {
+$(document).ajaxStop(function () {
     if (currentValue != null) {
-        currentValue.find(':submit').removeClass('disabled-btn');
-        currentValue.find(':submit').text(jsLang(buttonValue));
+        currentValue.find(":submit").removeClass("disabled-btn");
+        currentValue.find(":submit").text(jsLang(buttonValue));
     }
-    $('.spinner-border').remove();
-    $('#confirmDeleteSubmitBtn').text(deleteValue).removeClass('disabled-btn');
+    $(".spinner-border").remove();
+    $("#confirmDeleteSubmitBtn").text(deleteValue).removeClass("disabled-btn");
 });
-
 
 if ($(".import-table").length > 0) {
     $(".import-table .select2").select2();
 }
 
 if (!$(".main-body .page-wrapper").find("#export-container").length) {
-    $(".select2").select2({})
+    $(".select2").select2({});
 }
 
 $(".select2-hide-search").select2({
-    minimumResultsForSearch: Infinity
+    minimumResultsForSearch: Infinity,
 });
 
-$('.notification-close').on('click', function () {
-    $(this).closest('.top-notification').addClass('d-none');
-})
+$(".notification-close").on("click", function () {
+    $(this).closest(".top-notification").addClass("d-none");
+});
 // Add the following code if you want the name of the file appear on select
-$(".custom-file-input").on("change", function() {
+$(".custom-file-input").on("change", function () {
     var fileName = $(this).val().split("\\").pop();
     $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
 });
 
+$(".custom-file-label").attr("data-before", `${jsLang("Browse")}`);
 
-$(".custom-file-label").attr("data-before", `${jsLang('Browse')}`);
-
-$('.btn-loader').on('click', function() {
-    $(this).append(`<span class="spinner-border spinner-border-sm ml-1" role="status"></span>`);
+$(".btn-loader").on("click", function () {
+    $(this).append(
+        `<span class="spinner-border spinner-border-sm ml-1" role="status"></span>`
+    );
 
     setTimeout(() => {
-        $(this).find('.spinner-border').remove();
+        $(this).find(".spinner-border").remove();
     }, 5000);
-})
+});
 
 function loadToolTip() {
     // Tooltip initialize
-    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+    var tooltipTriggerList = [].slice.call(
+        document.querySelectorAll('[data-bs-toggle="tooltip"]')
+    );
     tooltipTriggerList.map(function (tooltipTriggerEl) {
-        return new bootstrap.Tooltip(tooltipTriggerEl)
-    })
+        return new bootstrap.Tooltip(tooltipTriggerEl);
+    });
 }
 
 function loadPopOver() {
-   // Popover initialize
-   var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
-   popoverTriggerList.map(function (popoverTriggerEl) {
-       return new bootstrap.Popover(popoverTriggerEl)
-   }) 
+    // Popover initialize
+    var popoverTriggerList = [].slice.call(
+        document.querySelectorAll('[data-bs-toggle="popover"]')
+    );
+    popoverTriggerList.map(function (popoverTriggerEl) {
+        return new bootstrap.Popover(popoverTriggerEl);
+    });
 }
 
-if ($('.yajra-data-table-main').length) {
-    $(document).ajaxComplete(function(event, xhr, settings) {
-        if (settings.url.split('?')[0] == '' || window.location.href.split('?')[0] == settings.url.split('?')[0]) {
+if ($(".yajra-data-table-main").length) {
+    $(document).ajaxComplete(function (event, xhr, settings) {
+        if (
+            settings.url.split("?")[0] == "" ||
+            window.location.href.split("?")[0] == settings.url.split("?")[0]
+        ) {
             loadToolTip();
             loadPopOver();
         }
@@ -306,23 +329,28 @@ if ($('.yajra-data-table-main').length) {
     loadPopOver();
 }
 
-$('.header-notification-icon').on('click', function() {
-    if ($(this).attr('data-bs-toggle') !== 'dropdown' || !$(this).hasClass('show')) {
+$(".header-notification-icon").on("click", function () {
+    if (
+        $(this).attr("data-bs-toggle") !== "dropdown" ||
+        !$(this).hasClass("show")
+    ) {
         return;
     }
-    
-    $(this).attr('data-bs-toggle', 'dropdown-change');
+
+    $(this).attr("data-bs-toggle", "dropdown-change");
     $.ajax({
-        url: SITE_URL + '/notifications/ajax-loading',
+        url: SITE_URL + "/notifications/ajax-loading",
         type: "GET",
-        beforeSend: function() {
-            $('.header-notification-body').html($('.notification-loader').html());
+        beforeSend: function () {
+            $(".header-notification-body").html(
+                $(".notification-loader").html()
+            );
         },
         success: function (data) {
-            $('.header-notification-body').html(data.data);
+            $(".header-notification-body").html(data.data);
         },
         complete: function () {
-            $('.header-notification-icon').attr('data-bs-toggle', 'dropdown');
+            $(".header-notification-icon").attr("data-bs-toggle", "dropdown");
         },
     });
-})
+});

@@ -5,7 +5,7 @@
     <div class="relative h-600p w-full ">
         @isset($banner->image)
             <img class="w-full h-full object-cover neg-transition-scale rounded-md"
-                src="{{ asset('public/uploads') . DIRECTORY_SEPARATOR . $banner->image }}" alt="{{ __('Image') }}">
+                src="{{ asset('distuploads') . DIRECTORY_SEPARATOR . $banner->image }}" alt="{{ __('Image') }}">
         @endisset
         <div class="absolute top-0 p-6">
             @if ($banner->u_subtitle)

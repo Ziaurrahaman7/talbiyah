@@ -23,6 +23,6 @@
 @prepend(moduleConfig('formbuilder.layout_css_stack', 'scripts'))
     <link rel="stylesheet" type="text/css" href="{{ asset('Modules/FormBuilder/Resources/assets/js/footable/css/footable.standalone.min.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('Modules/FormBuilder/Resources/assets/css/styles.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('public/dist/css/product.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('dist/css/product.min.css') }}">
 
 @endprepend

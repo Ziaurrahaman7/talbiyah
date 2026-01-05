@@ -386,7 +386,7 @@ if (! function_exists('updateLanguageFile')) {
     function updateLanguageFile($code)
     {
         $jsonString = [];
-        if (file_exists(base_path('resources/lang/' . $code . '.json')) && file_exists(base_path('public/js/lang/' . $code . '.js'))) {
+        if (file_exists(base_path('resources/lang/' . $code . '.json')) && file_exists(base_path('distjs/lang/' . $code . '.js'))) {
             $jsonString = json_decode(file_get_contents(base_path('resources/lang/' . $code . '.json')), true);
             $moduleLangData = [];
             $moduleEnData = [];
@@ -424,7 +424,7 @@ if (! function_exists('updateLanguageFile')) {
             saveJSFile($code, $enString);
         } else {
             file_put_contents(base_path(createDirectory('resources/lang/') . $code . '.json'), file_get_contents(base_path('resources/lang/en.json')));
-            file_put_contents(base_path(createDirectory('public/js/lang/') . $code . '.js'), file_get_contents(base_path('public/js/lang/en.js')));
+            file_put_contents(base_path(createDirectory('distjs/lang/') . $code . '.js'), file_get_contents(base_path('distjs/lang/en.js')));
         }
     }
 }

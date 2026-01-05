@@ -25,7 +25,7 @@ class LowStockThresholdNotification extends Notification
      *
      * @var string
      */
-    public static $image = 'public/frontend/img/stock.png';
+    public static $image = 'frontend/img/stock.png';
 
     public function __construct($request)
     {

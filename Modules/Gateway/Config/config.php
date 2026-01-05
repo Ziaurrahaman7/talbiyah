@@ -3,7 +3,7 @@
 return [
     'name' => 'Gateway',
 
-    'logo' => 'https://ecom2.elitedesign.com.bd/multivendor/public/frontend/assets/img/product/logo-4.png',
+    'logo' => 'https://ecom2.elitedesign.com.bd/multivendor/frontend/assets/img/product/logo-4.png',
 
     'app_name' => env('APP_NAME', 'Martvill'),
     /**

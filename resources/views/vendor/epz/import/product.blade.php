@@ -130,5 +130,5 @@
 
 @section('js')
     <!-- select2 JS -->
-    <script src="{{ asset('public/dist/js/custom/jquery.blockUI.min.js') }}"></script>
+    <script src="{{ asset('dist/js/custom/jquery.blockUI.min.js') }}"></script>
 @endsection

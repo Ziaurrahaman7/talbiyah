@@ -1,9 +1,9 @@
 @extends('vendor.layouts.app')
 @section('page_title', __('Supports'))
 @section('css')
-<link rel="stylesheet" href="{{ asset('public/datta-able/plugins/summer-note/summernote-lite.min.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('public/dist/css/invoice-style.min.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('public/dist/css/summer-note-modal.min.css') }}">
+<link rel="stylesheet" href="{{ asset('distdatta-able/plugins/summer-note/summernote-lite.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('dist/css/invoice-style.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('dist/css/summer-note-modal.min.css') }}">
     <link rel="stylesheet" href="{{ asset('Modules/MediaManager/Resources/assets/css/media-manager.min.css') }}">
 @endsection
 @section('content')
@@ -115,9 +115,9 @@
 @endsection
 
 @section('js')
-    <script src="{{ asset('public/datta-able/plugins/summer-note/summernote-lite.min.js') }}"></script>
-    <script src="{{ asset('public/dist/js/custom/validation.min.js') }}"></script>
-    <script src="{{ asset('public/datta-able/plugins/sweetalert/js/sweetalert.min.js') }}"></script>
+    <script src="{{ asset('distdatta-able/plugins/summer-note/summernote-lite.min.js') }}"></script>
+    <script src="{{ asset('dist/js/custom/validation.min.js') }}"></script>
+    <script src="{{ asset('distdatta-able/plugins/sweetalert/js/sweetalert.min.js') }}"></script>
     <script src="{{ asset('Modules/Ticket/Resources/assets/js/message.min.js') }}"></script>
     {!! translateValidationMessages() !!}
     <script>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     @yield('pdf-title')
-    <link rel="stylesheet" type="text/css" href="{{ asset('public/dist/css/pdf/list_pdf.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('dist/css/pdf/list_pdf.min.css') }}">
 </head>
 
 <body>
@@ -20,8 +20,8 @@
                                     $company_logo = preference('company_logo');
                                 @endphp
                                 @if(!empty($company_logo))
-                                    @if(file_exists("public/uploads/companyPic/". $company_logo) == true)
-                                        <img src="{{ url('/') . '/public/uploads/companyPic/' . $company_logo }}" alt="{{ url('/') . 'public/uploads/companyPic/' . $company_logo }}" class="mt-1p5">
+                                    @if(file_exists("distuploads/companyPic/". $company_logo) == true)
+                                        <img src="{{ url('/') . '/distuploads/companyPic/' . $company_logo }}" alt="{{ url('/') . 'distuploads/companyPic/' . $company_logo }}" class="mt-1p5">
                                     @endif
                                 @endif
                                 <div><span class="company-name">{{ preference('company_name') }}</span></div>

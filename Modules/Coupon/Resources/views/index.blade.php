@@ -1,7 +1,7 @@
 @extends('admin.layouts.app')
 @section('page_title', __('Coupons'))
 @section('css')
-    <link rel="stylesheet" href="{{ asset('public/dist/css/marketing.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('dist/css/marketing.min.css') }}">
 @endsection
 @section('content')
     <!-- Main content -->
@@ -42,6 +42,6 @@
         var pdf = "{{ in_array('Modules\Coupon\Http\Controllers\CouponController@downloadPdf', $prms) ? '1' : '0' }}";
         var csv = "{{ in_array('Modules\Coupon\Http\Controllers\CouponController@downloadCsv', $prms) ? '1' : '0' }}";
     </script>
-    <script src="{{ asset('public/dist/js/custom/coupon.min.js') }}"></script>
-    <script src="{{ asset('public/dist/js/custom/permission.min.js') }}"></script>
+    <script src="{{ asset('dist/js/custom/coupon.min.js') }}"></script>
+    <script src="{{ asset('dist/js/custom/permission.min.js') }}"></script>
 @endsection

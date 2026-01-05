@@ -82,7 +82,7 @@ class BrandController extends Controller
         if (! empty($brandId)) {
             // File Upload
             if (isset($request->image) && ! empty($request->image) && $request->hasFile('image')) {
-                $path = createDirectory('public/uploads/brand');
+                $path = createDirectory('distuploads/brand');
                 $fileIdList = (new File())->store(
                     [$request->image],
                     $path,
@@ -146,13 +146,13 @@ class BrandController extends Controller
                             'BRAND',
                             $id,
                             ['ids' => [$fileIds], 'isExceptId' => false],
-                            $path = 'public/uploads/brand'
+                            $path = 'distuploads/brand'
                         );
                     }
                     //end region
                     //region store files
                     if (isset($id) && ! empty($id) && $request->hasFile('image')) {
-                        $path = createDirectory('public/uploads/brand');
+                        $path = createDirectory('distuploads/brand');
                         $fileIdList = (new File())->store(
                             [$request->logo],
                             $path,

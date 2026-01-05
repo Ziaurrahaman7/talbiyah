@@ -123,4 +123,4 @@
 </div>
 @endif
 {{-- @endforeach --}}
-<script src="{{ asset('/public/dist/js/custom/site/notification-popup.min.js') }}"></script>
+<script src="{{ asset('/dist/js/custom/site/notification-popup.min.js') }}"></script>

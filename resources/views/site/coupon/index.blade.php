@@ -1,7 +1,7 @@
 @extends('../site/layouts.app')
 @section('page_title', __('Coupon'))
 @section('css')
-    <link rel="stylesheet" href="{{ asset('public/frontend/assets/css/plugin/animation.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('frontend/assets/css/plugin/animation.min.css') }}">
 @endsection
 @section('content')
     <!-- component -->
@@ -37,10 +37,10 @@
                 <div class="header-div bg-gray-11 relative ltr:float-right rtl:float-left">
                 </div>
                 <div>
-                    <img class="xl:w-382p xl:h-491p md:h-337p md:w-80 w-219-h-262 absolute xl:mt-4 md:mt-60p mt-2 wow ltr:md:-ml-12 ltr:ml-12 ltr:xxs:ml-20 ltr:sm:ml-28 LtrfadeInRight rtl:md:-mr-12 rtl:mr-12 rtl:xxs:mr-20 rtl:sm:mr-28 RtlfadeInLeft" data-wow-duration="2.5s" data-wow-delay="900ms" data-wow-offset="0" src="{{ asset('public/frontend/assets/img/coupon/man-circle.png') }}" alt="{{ __('Image') }}">
-                    <img id="shopping_bag" class="absolute xl:h-60p primary-text-color xl:w-52p w-7 h-8 xl:mt-60p md:mt-10 header-icon cursor-pointer wow fadeIn ltr:xl:-ml-89p ltr:md:-ml-10 ltr:ml-9 rtl:xl:-mr-89p rtl:md:-mr-10 rtl:mr-9" data-wow-duration="2.5s" data-wow-delay="900ms" src="{{ asset('public/frontend/assets/img/coupon/shopping_bag.svg') }}" alt="{{ __('Image') }}">
-                    <img id="cart" class="absolute xl:h-49p xl:w-58p w-8 h-7 xl:mt-450p md:mt-96 mt-60 header-icon cursor-pointer wow fadeIn ltr:xl:-ml-36 ltr:md:-ml-12 rtl:xl:-mr-36 rtl:md:-mr-12" data-wow-duration="2.5s" data-wow-delay="900ms" src="{{ asset('public/frontend/assets/img/coupon/cart.svg') }}" alt="{{ __('Image') }}">
-                    <img id="hand" class="absolute xl:w-53p xl:h-58p w-29p h-8 header-icon xl:mt-485p md:mt-96 mt-64 cursor-pointer wow fadeIn ltr:xl:ml-411p ltr:xs:ml-72 ltr:ml-64 rtl:xl:mr-411p rtl:xs:mr-72 rtl:mr-64" data-wow-duration="2.5s" data-wow-delay="900ms" src="{{ asset('public/frontend/assets/img/coupon/hand.svg') }}" alt="{{ __('Image') }}">
+                    <img class="xl:w-382p xl:h-491p md:h-337p md:w-80 w-219-h-262 absolute xl:mt-4 md:mt-60p mt-2 wow ltr:md:-ml-12 ltr:ml-12 ltr:xxs:ml-20 ltr:sm:ml-28 LtrfadeInRight rtl:md:-mr-12 rtl:mr-12 rtl:xxs:mr-20 rtl:sm:mr-28 RtlfadeInLeft" data-wow-duration="2.5s" data-wow-delay="900ms" data-wow-offset="0" src="{{ asset('frontend/assets/img/coupon/man-circle.png') }}" alt="{{ __('Image') }}">
+                    <img id="shopping_bag" class="absolute xl:h-60p primary-text-color xl:w-52p w-7 h-8 xl:mt-60p md:mt-10 header-icon cursor-pointer wow fadeIn ltr:xl:-ml-89p ltr:md:-ml-10 ltr:ml-9 rtl:xl:-mr-89p rtl:md:-mr-10 rtl:mr-9" data-wow-duration="2.5s" data-wow-delay="900ms" src="{{ asset('frontend/assets/img/coupon/shopping_bag.svg') }}" alt="{{ __('Image') }}">
+                    <img id="cart" class="absolute xl:h-49p xl:w-58p w-8 h-7 xl:mt-450p md:mt-96 mt-60 header-icon cursor-pointer wow fadeIn ltr:xl:-ml-36 ltr:md:-ml-12 rtl:xl:-mr-36 rtl:md:-mr-12" data-wow-duration="2.5s" data-wow-delay="900ms" src="{{ asset('frontend/assets/img/coupon/cart.svg') }}" alt="{{ __('Image') }}">
+                    <img id="hand" class="absolute xl:w-53p xl:h-58p w-29p h-8 header-icon xl:mt-485p md:mt-96 mt-64 cursor-pointer wow fadeIn ltr:xl:ml-411p ltr:xs:ml-72 ltr:ml-64 rtl:xl:mr-411p rtl:xs:mr-72 rtl:mr-64" data-wow-duration="2.5s" data-wow-delay="900ms" src="{{ asset('frontend/assets/img/coupon/hand.svg') }}" alt="{{ __('Image') }}">
                 </div>
             </div>
             <div class="clear-both"></div>
@@ -82,7 +82,7 @@
                                         <p class="dm-bold font-bold text-gray-12 leading-22p lg:text-base text-sm">
                                             {{ __('Code') }} : <span id="coupon-code">{{ $topThreeCoupon->code }}</span></p>
                                         <div class="flex justify-center items-center copy-button">
-                                            <img src="{{ asset('public/frontend/assets/img/coupon/copy.svg') }}"
+                                            <img src="{{ asset('frontend/assets/img/coupon/copy.svg') }}"
                                                 alt="{{ __('Image') }}">
                                             <p class="dm-sans font-medium text-gray-12 lg:text-13 text-xs py-2p  ltr:pl-2.5 rtl:pr-2.5">
                                                 {{ __('Copy') }}</p>
@@ -149,7 +149,7 @@
                                         id="coupon-code">{{ $weeklyCoupon->code }}</span>
                                 </p>
                                 <div class="flex justify-center items-center copy-button test">
-                                    <img src="{{ asset('public/frontend/assets/img/coupon/copy.svg') }}" alt="{{ __('Image') }}">
+                                    <img src="{{ asset('frontend/assets/img/coupon/copy.svg') }}" alt="{{ __('Image') }}">
                                     <p class="dm-sans font-medium text-gray-12 lg:text-13 text-xs py-2p ltr:pl-2.5 rtl:pr-2.5">{{ __('Copy') }}</p>
                                 </div>
                             </div>
@@ -212,7 +212,7 @@
                                     <p class="dm-bold font-bold text-white lg:text-base text-sm">
                                         {{ __('Code') . ': ' }} <span id="coupon-code">{{ $coupon->code }}</span> </p>
                                     <div class="flex justify-center items-center copy-button">
-                                        <img src="{{ asset('public/frontend/assets/img/coupon/white-copy.svg') }}"
+                                        <img src="{{ asset('frontend/assets/img/coupon/white-copy.svg') }}"
                                             alt="{{ __('Image') }}">
                                         <span
                                             class="dm-sans font-medium text-white lg:text-13 text-xs py-2p ltr:pl-2.5 rtl:pr-2.5">{{ __('Copy') }}</span>
@@ -251,6 +251,6 @@
     </div>
 @endsection
 @section('js')
-    <script src="{{ asset('/public/dist/js/custom/site/animation.min.js') }}"></script>
-    <script src="{{ asset('/public/dist/js/custom/site/coupon.min.js') }}"></script>
+    <script src="{{ asset('/dist/js/custom/site/animation.min.js') }}"></script>
+    <script src="{{ asset('/dist/js/custom/site/coupon.min.js') }}"></script>
 @endsection

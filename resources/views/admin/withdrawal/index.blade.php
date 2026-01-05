@@ -1,7 +1,7 @@
 @extends('admin.layouts.app')
 @section('page_title', __('Withdrawal'))
 @section('css')
-    <link rel="stylesheet" href="{{ asset('public/dist/css/product.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('dist/css/product.min.css') }}">
 @endsection
 @section('content')
 
@@ -36,8 +36,8 @@
         var pdf = "{{ (in_array('App\Http\Controllers\WithdrawalController@pdf', $prms)) ? '1' : '0' }}";
         var csv = "{{ (in_array('App\Http\Controllers\WithdrawalController@csv', $prms)) ? '1' : '0' }}";
     </script>
-    <script src="{{ asset('public/dist/js/custom/permission.min.js') }}"></script>
-    <script src="{{ asset('public/dist/js/custom/withdrawal.min.js') }}"></script>
+    <script src="{{ asset('dist/js/custom/permission.min.js') }}"></script>
+    <script src="{{ asset('dist/js/custom/withdrawal.min.js') }}"></script>
 @endsection
 
 

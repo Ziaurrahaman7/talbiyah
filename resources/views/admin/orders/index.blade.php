@@ -1,7 +1,7 @@
 @extends('admin.layouts.app')
 @section('page_title', __('Orders'))
 @section('css')
-    <link rel="stylesheet" href="{{ asset('public/dist/css/admin-order.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('dist/css/admin-order.min.css') }}">
 @endsection
 @section('content')
     <!-- Main content -->
@@ -67,8 +67,8 @@
     </div>
 @endsection
 @section('js')
-    <script src="{{ asset('public/dist/js/moment.min.js') }}"></script>
-    <script src="{{ asset('public/dist/plugins/bootstrap-daterangepicker/daterangepicker.min.js') }}"></script>
+    <script src="{{ asset('dist/js/moment.min.js') }}"></script>
+    <script src="{{ asset('dist/plugins/bootstrap-daterangepicker/daterangepicker.min.js') }}"></script>
     <script type="text/javascript">
         'use strict';
         var pdf = "{{ (in_array('App\Http\Controllers\OrderController@pdf', $prms)) ? '1' : '0' }}";
@@ -76,8 +76,8 @@
         var startDate = "{!! isset($from) ? $from : 'undefined' !!}";
         var endDate   = "{!! isset($to) ? $to : 'undefined' !!}";
     </script>
-    <script src="{{ asset('public/dist/js/custom/permission.min.js') }}"></script>
-    <script src="{{ asset('public/dist/js/custom/order.min.js') }}"></script>
+    <script src="{{ asset('dist/js/custom/permission.min.js') }}"></script>
+    <script src="{{ asset('dist/js/custom/order.min.js') }}"></script>
     @if(isActive('BulkPayment'))
         <script>
             var countBulkPayment = '{{ preference('bulk_pay_count') }}';

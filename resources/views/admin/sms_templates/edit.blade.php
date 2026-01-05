@@ -78,7 +78,7 @@
                                                                 <!-- Escape the english details -->
                                                                 @continue ($language->short_name == 'en')
                                                                 <div class="card-header p-0">
-                                                                    <img src='{{ url('public/datta-able/fonts/flag/flags/4x3/' . getSVGFlag($language->short_name) . '.svg') }}'
+                                                                    <img src='{{ url('distdatta-able/fonts/flag/flags/4x3/' . getSVGFlag($language->short_name) . '.svg') }}'
                                                                         height="20" alt="{{ $language->flag }}"> <span
                                                                         class="text-uppercase f-18 font-weight-bold">{{ $language->name }}</span>
                                                                 </div>
@@ -147,5 +147,5 @@
 @endsection
 
 @section('js')
-    <script src="{{ asset('public/dist/js/custom/validation.min.js') }}"></script>
+    <script src="{{ asset('dist/js/custom/validation.min.js') }}"></script>
 @endsection

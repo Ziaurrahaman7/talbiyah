@@ -1,7 +1,7 @@
 @extends('vendor.layouts.app')
 @section('page_title', __('Conversation'))
 @section('css')
-    <link rel="stylesheet" href="{{ asset('public/datta-able/plugins/summer-note/summernote-lite.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('distdatta-able/plugins/summer-note/summernote-lite.min.css') }}">
     <link rel="stylesheet" href="{{ asset('Modules/Ticket/Resources/assets/css/ticket-reply.min.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('Modules/Ticket/Resources/assets/css/jqueryui.min.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('Modules/Ticket/Resources/assets/css/custom-badges.min.css') }}">
@@ -129,7 +129,7 @@
                                                 @php
                                                     $str = explode('.', $file->file_name);
                                                     $file->extension = $str[count($str) - 1];
-                                                    $url = url('public/dist') . '/js/html5lightbox/no_preview.png?v' . $file->id;
+                                                    $url = url('dist') . '/js/html5lightbox/no_preview.png?v' . $file->id;
                                                     $extra = '';
                                                     $div = '';
                                                     if (in_array($file->extension, ['jpg', 'png', 'jpeg', 'gif', 'pdf', 'flv', 'webm', 'mp4', 'ogv', 'swf', 'm4v', 'ogg'])) {
@@ -208,7 +208,7 @@
                                                 @php
                                                     $str = explode('.', $file->file_name);
                                                     $file->extension = $str[count($str) - 1];
-                                                    $url = url('public/dist') . '/js/html5lightbox/no_preview.png?v' . $file->id;
+                                                    $url = url('dist') . '/js/html5lightbox/no_preview.png?v' . $file->id;
                                                     $extra = '';
                                                     $div = '';
                                                     if (in_array($file->extension, ['jpg', 'png', 'jpeg', 'gif', 'pdf', 'flv', 'webm', 'mp4', 'ogv', 'swf', 'm4v', 'ogg'])) {
@@ -294,8 +294,8 @@
 @endsection
 
 @section('js')
-    <script src="{{ asset('public/datta-able/plugins/summer-note/summernote-lite.min.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('public/dist/js/html5lightbox/html5lightbox.min.js') }}"></script>
+    <script src="{{ asset('distdatta-able/plugins/summer-note/summernote-lite.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('dist/js/html5lightbox/html5lightbox.min.js') }}"></script>
     <script src="{{ asset('Modules/Ticket/Resources/assets/js/message.min.js') }}"></script>
     {!! translateValidationMessages() !!}
 @endsection

@@ -15,7 +15,7 @@ class File extends Model
 
     public $timestamps = false;
 
-    private $_tempDirectory = 'public/contents/temp/';
+    private $_tempDirectory = 'distcontents/temp/';
 
     protected $casts = [
         'params' => 'array',

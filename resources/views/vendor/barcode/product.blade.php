@@ -2,7 +2,7 @@
 @section('page_title', __('Product Barcode'))
 
 @section('css')
-    <link rel="stylesheet" href="{{ asset('public/dist/plugins/jQueryUI/jquery-ui.min.css') }}" type="text/css"/>
+    <link rel="stylesheet" href="{{ asset('dist/plugins/jQueryUI/jquery-ui.min.css') }}" type="text/css"/>
 @endsection
 
 @section('content')
@@ -143,13 +143,13 @@
     </div>
 @endsection
 @section('js')
-    <script src="{{ asset('public/dist/plugins/jQueryUI/jquery-ui.min.js') }}"></script>
-    <script src="{{ asset('public/dist/js/moment.min.js') }}"></script>
-    <script src="{{ asset('public/dist/js/jquery.PrintArea.min.js') }}"></script>
+    <script src="{{ asset('dist/plugins/jQueryUI/jquery-ui.min.js') }}"></script>
+    <script src="{{ asset('dist/js/moment.min.js') }}"></script>
+    <script src="{{ asset('dist/js/jquery.PrintArea.min.js') }}"></script>
     <script>
         var HomePageUrl = '{{ route('site.index') }}';
         var rowNo = '{{ $rowNo }}';
         var stack = '{!! count($stack) > 0 ? json_encode($stack) : '[]' !!}';
     </script>
-    <script src="{{ asset('public/dist/js/custom/barcode.min.js') }}"></script>
+    <script src="{{ asset('dist/js/custom/barcode.min.js') }}"></script>
 @endsection

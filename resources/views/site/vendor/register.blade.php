@@ -1,7 +1,7 @@
 @extends('.site.layouts.app')
 @section('page_title', __('Vendor Resigtration'))
 @section('css')
-    <link rel="stylesheet" href="{{ asset('public/datta-able/plugins/select2/css/select2.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('distdatta-able/plugins/select2/css/select2.min.css') }}">
 @endsection
 @section('content')
 @php
@@ -17,7 +17,7 @@
 @endphp
     <!-- component -->
     <div class="bg-gray-23 lg:bg-cover bg-center">
-        <span><img class="3xl:h-full h-36" src="{{ asset('public/frontend/assets/img/be-seller/registration-header-bg.svg') }}" alt="{{ __('Image') }}"></span>
+        <span><img class="3xl:h-full h-36" src="{{ asset('frontend/assets/img/be-seller/registration-header-bg.svg') }}" alt="{{ __('Image') }}"></span>
     </div>
     <div class="3xl:mx-470p 2xl:mx-64 xl:mx-32 md:mx-20 mx-5 mb-70p 3xl:-mt-132p -mt-28 relative border border-gray-2 bg-white rounded-lg">
         <p class="lg:mt-12 mt-6 text-gray-10 lg:text-lg text-xs dm-sans font-medium text-center">
@@ -213,8 +213,8 @@
         var oldState = "{!! old('state') ?? 'null' !!}";
         var oldCity = "{!! old('city') ?? 'null' !!}";
     </script>
-    <script src="{{ asset('public/datta-able/plugins/select2/js/select2.full.min.js') }}"></script>
-    <script src="{{ asset('/public/dist/js/custom/site/seller.min.js') }}"></script>
+    <script src="{{ asset('distdatta-able/plugins/select2/js/select2.full.min.js') }}"></script>
+    <script src="{{ asset('/dist/js/custom/site/seller.min.js') }}"></script>
     <!-- Sign Up Script -->
     @includeIf ('externalcode::layouts.scripts.signUpScript')
 @endsection

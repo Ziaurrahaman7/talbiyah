@@ -59,7 +59,7 @@
                                             <i class="fa fa-times"></i>
                                         </div>
                                         <img class="upl-img neg-transition-scale" class="p-1"
-                                            src="{{ asset('public/uploads') . DIRECTORY_SEPARATOR . $slide->image }}"
+                                            src="{{ asset('distuploads') . DIRECTORY_SEPARATOR . $slide->image }}"
                                             alt="{{ __('Image') }}">
                                         <input type="hidden" name="slide[image]" value="{{ $slide->image }}">
                                     </div>

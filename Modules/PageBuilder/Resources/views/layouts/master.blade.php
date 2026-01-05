@@ -25,17 +25,17 @@
 
 <body>
     @yield('content')
-    @if(file_exists(base_path('public/js/lang/' . config('app.locale') . '.js')))
-        <script src="{{ asset('public/js/lang/' . config('app.locale') . '.js') }}"></script>
+    @if(file_exists(base_path('distjs/lang/' . config('app.locale') . '.js')))
+        <script src="{{ asset('distjs/lang/' . config('app.locale') . '.js') }}"></script>
     @else
         <script type="text/javascript">const translates = {}</script>
     @endif
-    <script src="{{ asset('public/dist/js/jquery.min.js') }}"></script>
-    <script src="{{ asset('public/datta-able/plugins/bootstrap-v5/js/slim.min.js') }}"></script>
-    <script src="{{ asset('public/datta-able/plugins/bootstrap-v5/js/bootstrap.min.js') }}"></script>
-    <script src="{{ asset('public/datta-able/js/pcoded.min.js') }}"></script>
-    <script src="{{ asset('public/datta-able/plugins/select2/js/select2.full.min.js') }}"></script>
-    <script src="{{ asset('public/dist/js/custom/app-layout.min.js') }}"></script>
+    <script src="{{ asset('dist/js/jquery.min.js') }}"></script>
+    <script src="{{ asset('distdatta-able/plugins/bootstrap-v5/js/slim.min.js') }}"></script>
+    <script src="{{ asset('distdatta-able/plugins/bootstrap-v5/js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('distdatta-able/js/pcoded.min.js') }}"></script>
+    <script src="{{ asset('distdatta-able/plugins/select2/js/select2.full.min.js') }}"></script>
+    <script src="{{ asset('dist/js/custom/app-layout.min.js') }}"></script>
     @stack('scripts')
 </body>
 

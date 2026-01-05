@@ -5,16 +5,16 @@
     <title>{{ trimWords(preference('company_name'), 17) }} | @yield('page_title', env('APP_NAME', ''))</title>
     <meta charset="UTF-8">
     <meta rel="stylesheet" name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{ asset('public/css/tailwind-custom.min.css') }}" />
-    <link href="{{ asset('public/frontend/assets/css/google-font-inter.min.css') }}" >
-    <link rel="stylesheet" href="{{ asset('public/frontend/assets/css/main.min.css') }}" />
-    <link rel="stylesheet" href="{{ asset('public/css/app.min.css') }}" />
-    <link rel="stylesheet" href="{{ asset('public/frontend/assets/css/dark.min.css') }}" />
-    <link rel="stylesheet" href="{{ asset('public/datta-able/fonts/fontawesome/css/fontawesome-all.min.css') }}">
-    <script src="{{ asset('public/frontend/assets/js/alpine.min.js') }}" defer></script>
-    <link rel="stylesheet" href="{{ asset('public/frontend/assets/css/user-panel.min.css') }}">
-    @if(file_exists(base_path('public/js/lang/' . config('app.locale') . '.js')))
-        <script src="{{ asset('public/js/lang/' . config('app.locale') . '.js') }}"></script>
+    <link rel="stylesheet" href="{{ asset('css/tailwind-custom.min.css') }}" />
+    <link href="{{ asset('frontend/assets/css/google-font-inter.min.css') }}" >
+    <link rel="stylesheet" href="{{ asset('frontend/assets/css/main.min.css') }}" />
+    <link rel="stylesheet" href="{{ asset('css/app.min.css') }}" />
+    <link rel="stylesheet" href="{{ asset('frontend/assets/css/dark.min.css') }}" />
+    <link rel="stylesheet" href="{{ asset('datta-able/fonts/fontawesome/css/fontawesome-all.min.css') }}">
+    <script src="{{ asset('frontend/assets/js/alpine.min.js') }}" defer></script>
+    <link rel="stylesheet" href="{{ asset('frontend/assets/css/user-panel.min.css') }}">
+    @if(file_exists(base_path('js/lang/' . config('app.locale') . '.js')))
+        <script src="{{ asset('js/lang/' . config('app.locale') . '.js') }}"></script>
     @else
         <script type="text/javascript">const translates = {}</script>
     @endif
@@ -35,7 +35,7 @@
         }
     </style>
     @yield('parent-css')
-    <link rel="stylesheet" href="{{ asset('public/dist/css/site_custom.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('dist/css/site_custom.min.css') }}">
     <script type="text/javascript">
         'use strict';
         var SITE_URL              = "{{ URL::to('/') }}";
@@ -44,13 +44,13 @@
     </script>
 
     <!-- Required Js -->
-    <script src="{{ asset('public/dist/js/jquery.min.js') }}"></script>
+    <script src="{{ asset('dist/js/jquery.min.js') }}"></script>
 
 </head>
 
 <!-- partial:index.partial.html -->
 
-<body class="antialiased bg-gray-100 overflow-hidden m-0" x-data="{'darkMode': false}" x-init="
+<body class="m-0 overflow-hidden antialiased bg-gray-100" x-data="{'darkMode': false}" x-init="
 darkMode = JSON.parse(localStorage.getItem('darkMode'));
 $watch('darkMode', value => localStorage.setItem('darkMode', JSON.stringify(value)))">
 @php
@@ -60,15 +60,15 @@ $watch('darkMode', value => localStorage.setItem('darkMode', JSON.stringify(valu
         ->first();
 @endphp
 <div :class="{'dark': darkMode === true}">
-    <div class=" dark:bg-red-2 dark:text-gray-100 ">
+    <div class=" dark:bg-red-2 dark:text-gray-100">
 
 
-        <div x-data="{ sidemenu: false }" class="h-screen flex overflow-hidden" x-cloak
+        <div x-data="{ sidemenu: false }" class="flex h-screen overflow-hidden" x-cloak
              @keydown.window.escape="sidemenu = false">
                 <!-- sidebar start -->
                 @include('site.layouts.user_panel.includes.sidebar')
                 <!-- sidebar end -->
-                <div class="flex-1 flex-col relative z-0 overflow-y-auto pb-8 dark:bg-red-1 bg-white">
+                <div class="relative z-0 flex-col flex-1 pb-8 overflow-y-auto bg-white dark:bg-red-1">
                 <!-- header start -->
                @include('../site/layouts.user_panel.includes.header')
                 <!-- header end -->
@@ -85,7 +85,7 @@ $watch('darkMode', value => localStorage.setItem('darkMode', JSON.stringify(valu
         </div>
     </div>
     <!-- partial -->
-    <script src="{{ asset('public/frontend/assets/js/user-dashboard.min.js') }}"></script>
+    <script src="{{ asset('frontend/assets/js/user-dashboard.min.js') }}"></script>
 @yield('parent-js')
 
 </body>

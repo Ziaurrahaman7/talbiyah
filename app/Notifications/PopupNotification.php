@@ -21,7 +21,7 @@ class PopupNotification extends Notification
      *
      * @var string
      */
-    public static $image = 'public/frontend/img/mail.png';
+    public static $image = 'frontend/img/mail.png';
 
     public function __construct($request)
     {

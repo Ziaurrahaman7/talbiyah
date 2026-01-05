@@ -96,7 +96,7 @@ class TicketController extends Controller
         $data['priority']           = Priority::where('id', '!=', $data['ticketDetails']->priority_id)->get();
         $data['ticketReplies']      = (new Thread())->getAllTicketRepliersById($ticket_id);
         $data['ticketStatus'] = ThreadStatus::where('id', '=', $data['ticketDetails']->threadStatus->id)->orderBy('name')->first();
-        $data['filePath'] = 'public/uploads';
+        $data['filePath'] = 'distuploads';
         $data['assignee']    = User::whereHas('roleUser', function ($query) {
             $query->where('role_id', 1);
         })->active()->get();

@@ -47,5 +47,5 @@
         const markReadUrl = ADMIN_SITE_URL + '/notifications/mark-as-read/'
         const markUnreadUrl = ADMIN_SITE_URL + '/notifications/mark-as-unread/'
     </script>
-    <script src="{{ asset('public/dist/js/custom/notification.min.js') }}"></script>
+    <script src="{{ asset('dist/js/custom/notification.min.js') }}"></script>
 @endsection

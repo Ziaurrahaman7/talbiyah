@@ -73,5 +73,5 @@
 @endsection
 
 @section('js')
-    <script src="{{ asset('public/dist/js/custom/export.min.js') }}"></script>
+    <script src="{{ asset('dist/js/custom/export.min.js') }}"></script>
 @endsection

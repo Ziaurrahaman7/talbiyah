@@ -62,7 +62,7 @@ return [
      * Thumbnail path
      *
      * Note:If you want to change the thumbnail_dir name,
-     * You must change dir name from public/uploads/[old thumbnail directory name]
+     * You must change dir name from distuploads/[old thumbnail directory name]
      * */
     'thumbnail_dir' => 'sizes',
 

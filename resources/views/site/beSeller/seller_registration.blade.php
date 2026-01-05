@@ -2,7 +2,7 @@
 @section('page_title', __('Details'))
 @section('content')
     <div class="bg-gray-23 lg:bg-cover bg-center">
-        <span><img class="3xl:h-full h-36" src="{{ asset('public/frontend/assets/img/be-seller/registration-header-bg.svg') }}" alt="{{ __('Image') }}"></span>
+        <span><img class="3xl:h-full h-36" src="{{ asset('frontend/assets/img/be-seller/registration-header-bg.svg') }}" alt="{{ __('Image') }}"></span>
     </div>
     <div class="2xl:mx-470p lg:mx-32 md:mx-20 mx-5 mb-70p 3xl:-mt-132p -mt-28 relative border border-gray-2 bg-white rounded-lg">
         <p class="lg:mt-12 mt-6 text-gray-10 lg:text-lg text-xs dm-sans font-medium text-center">{{ __('Register now with few easy steps!') }}</p>
@@ -78,7 +78,7 @@
             <div>
                 <div class="flex lg:mt-7 mt-18p w-full">
                     <span class="lg:mt-30p mt-6">
-                        <img class="lg:h-32 lg:w-32 h-24 w-24 rounded-full" id="blah" src="{{ asset('public/frontend/assets/img/be-seller/image_1.svg') }}" alt="your image" />
+                        <img class="lg:h-32 lg:w-32 h-24 w-24 rounded-full" id="blah" src="{{ asset('frontend/assets/img/be-seller/image_1.svg') }}" alt="your image" />
                     </span>
                     <div class="lg:mt-52p mt-8 lg:ml-7 ml-6">
                         <p class="roboto-medium font-medium text-gray-10 text-13">{{ __('Drag & drop files to upload or') }}</p>
@@ -164,5 +164,5 @@
     </div>
 @endsection
 @section('js')
-<script src="{{ asset('/public/dist/js/custom/site/seller-registration.min.js') }}"></script>
+<script src="{{ asset('/dist/js/custom/site/seller-registration.min.js') }}"></script>
 @endsection

@@ -1,7 +1,7 @@
 @extends('admin.layouts.app')
 @section('page_title', __('Popups'))
 @section('css')
-    <link rel="stylesheet" href="{{ asset('public/dist/css/marketing.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('dist/css/marketing.min.css') }}">
 @endsection
 @section('content')
     <!-- Main content -->
@@ -48,6 +48,6 @@
         var pdf = 0;
         var csv = 0;
     </script>
-    <script src="{{ asset('public/dist/js/custom/popup.min.js') }}"></script>
-    <script src="{{ asset('public/dist/js/custom/permission.min.js') }}"></script>
+    <script src="{{ asset('dist/js/custom/popup.min.js') }}"></script>
+    <script src="{{ asset('dist/js/custom/permission.min.js') }}"></script>
 @endsection

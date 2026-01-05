@@ -33,7 +33,7 @@
     var pdf = "{{ (in_array('App\Http\Controllers\Vendor\ShopController@pdf', $prms)) ? '1' : '0' }}";
     var csv = "{{ (in_array('App\Http\Controllers\Vendor\ShopController@csv', $prms)) ? '1' : '0' }}";
 </script>
-<script src="{{ asset('public/dist/js/custom/shops.min.js') }}"></script>
-<script src="{{ asset('public/dist/js/custom/permission.min.js') }}"></script>
+<script src="{{ asset('dist/js/custom/shops.min.js') }}"></script>
+<script src="{{ asset('dist/js/custom/permission.min.js') }}"></script>
 @endsection
 

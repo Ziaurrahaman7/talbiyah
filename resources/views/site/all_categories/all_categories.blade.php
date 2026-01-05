@@ -114,5 +114,5 @@
 @endsection
 
 @section('js')
-    <script src="{{ asset('public/dist/js/custom/site/all-categories.min.js') }}"></script>
+    <script src="{{ asset('dist/js/custom/site/all-categories.min.js') }}"></script>
 @endsection

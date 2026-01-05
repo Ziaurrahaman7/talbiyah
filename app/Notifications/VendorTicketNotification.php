@@ -25,7 +25,7 @@ class VendorTicketNotification extends Notification
      *
      * @var string
      */
-    public static $image = 'public/frontend/img/ticket.png';
+    public static $image = 'frontend/img/ticket.png';
 
     public function __construct($request)
     {

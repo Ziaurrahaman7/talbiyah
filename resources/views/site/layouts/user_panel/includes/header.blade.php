@@ -246,4 +246,4 @@
     </div>
 </div>
 
-<script src="{{ asset('public/frontend/assets/js/notification-modal.min.js') }}"></script>
+<script src="{{ asset('frontend/assets/js/notification-modal.min.js') }}"></script>

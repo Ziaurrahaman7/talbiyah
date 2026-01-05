@@ -1,7 +1,7 @@
 @extends('admin.layouts.app')
 @section('page_title', __('Permission Roles'))
 @section('css')
-    <link rel="stylesheet" href="{{ asset('public/dist/css/role-permission.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('dist/css/role-permission.min.css') }}">
 @endsection
 @section('content')
 
@@ -164,5 +164,5 @@
 @endsection
 
 @section('js')
-    <script src="{{ asset('public/dist/js/custom/roles.min.js') }}"></script>
+    <script src="{{ asset('dist/js/custom/roles.min.js') }}"></script>
 @endsection

@@ -2,7 +2,7 @@
 @section('page_title', __('Create Refund'))
 @section('css')
     <link rel="stylesheet" href="{{ asset('Modules/Refund/Resources/assets/css/refund.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('public/datta-able/plugins/select2/css/select2.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('distdatta-able/plugins/select2/css/select2.min.css') }}">
 @endsection
 @section('content')
     <div class="dark:bg-red-1 h-full xl:px-74p px-5 pt-30p xl:pt-14 bg-white">
@@ -98,7 +98,7 @@
                         <input class="sr-only cursor-pointer" name="image[]" accept="image/*" type='file' id="imgInp"
                             multiple />
                         <img class="m-auto rounded-md" id="blah"
-                            src="{{ asset('public/frontend/assets/img/refund/Group 9186.png') }}" alt="your image" />
+                            src="{{ asset('frontend/assets/img/refund/Group 9186.png') }}" alt="your image" />
                     </label>
                     <div class="lg:mt-3.5 mt-1 ltr:ml-4 rtl:mr-4">
                         <p class="dm-sans font-medium lg:text-sm text-13 text-gray-12 whitespace-nowrap lg:mb-3 mb-2">
@@ -123,9 +123,9 @@
     <script>
         var product_id = "{{ request()->product_id }}";
     </script>
-    <script src="{{ asset('public/datta-able/plugins/select2/js/select2.full.min.js') }}"></script>
-    <script src="{{ asset('public/dist/js/custom/site/common.min.js') }}"></script>
+    <script src="{{ asset('distdatta-able/plugins/select2/js/select2.full.min.js') }}"></script>
+    <script src="{{ asset('dist/js/custom/site/common.min.js') }}"></script>
     <script src="{{ asset('Modules/Refund/Resources/assets/js/refund.min.js') }}"></script>
-    <script src="{{ asset('public/dist/js/custom/validation.min.js') }}"></script>
+    <script src="{{ asset('dist/js/custom/validation.min.js') }}"></script>
 
 @endsection

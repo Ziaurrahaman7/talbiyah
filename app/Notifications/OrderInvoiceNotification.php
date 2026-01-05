@@ -25,7 +25,7 @@ class OrderInvoiceNotification extends Notification
      *
      * @var string
      */
-    public static $image = 'public/frontend/img/order.png';
+    public static $image = 'frontend/img/order.png';
 
     public function __construct($request)
     {

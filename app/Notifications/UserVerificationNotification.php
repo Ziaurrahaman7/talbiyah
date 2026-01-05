@@ -25,7 +25,7 @@ class UserVerificationNotification extends Notification
      *
      * @var string
      */
-    public static $image = 'public/frontend/img/user.png';
+    public static $image = 'frontend/img/user.png';
 
     public function __construct($request)
     {

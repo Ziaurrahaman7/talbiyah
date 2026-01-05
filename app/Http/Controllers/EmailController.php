@@ -120,7 +120,7 @@ class EmailController extends Controller
             'to'      => [$to],
             'subject' => $subject,
             'content' => $messageBody,
-            'attach'  => url("public/uploads/invoices/$invoiceName"),
+            'attach'  => url("distuploads/invoices/$invoiceName"),
         ];
 
         $emailInfo = EmailConfiguration::getAll()->first();

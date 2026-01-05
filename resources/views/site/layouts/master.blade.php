@@ -47,13 +47,13 @@ fbq('track', 'PageView');
 src="https://www.facebook.com/tr?id=2355381278153504&ev=PageView&noscript=1"
 /></noscript>
 <!-- End Meta Pixel Code -->
-    <link rel="stylesheet" href="{{ asset('public/css/app.min.css') }}" />
-    <link rel="stylesheet" href="{{ asset('public/css/tailwind-custom.min.css') }}" />
-    <link rel="stylesheet" href="{{ asset('public/frontend/assets/swiper/swiper-bundle.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('public/frontend/assets/css/animate.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('public/frontend/assets/css/google-font-roboto.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('public/frontend/assets/css/font-awesome.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('public/dist/plugins/jQueryUI/jquery-ui.min.css') }}" type="text/css" />
+    <link rel="stylesheet" href="{{ asset('css/app.min.css') }}" />
+    <link rel="stylesheet" href="{{ asset('css/tailwind-custom.min.css') }}" />
+    <link rel="stylesheet" href="{{ asset('frontend/assets/swiper/swiper-bundle.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('frontend/assets/css/animate.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('frontend/assets/css/google-font-roboto.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('frontend/assets/css/font-awesome.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('dist/plugins/jQueryUI/jquery-ui.min.css') }}" type="text/css" />
 
     @php
         $favicon = App\Models\Preference::getFavicon();
@@ -68,19 +68,19 @@ src="https://www.facebook.com/tr?id=2355381278153504&ev=PageView&noscript=1"
 
     @doAction("after_site_css_{$view_name}")
     <!-- Menubar css -->
-    <link rel="stylesheet" href="{{ asset('public/frontend/assets/css/ionicon.min.css') }}" />
+    <link rel="stylesheet" href="{{ asset('frontend/assets/css/ionicon.min.css') }}" />
     <!-- Menubar css end-->
 
     <!-- Custom CSS-->
-    <link rel="stylesheet" href="{{ asset('public/dist/css/site_custom.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('dist/css/site_custom.min.css') }}">
 
     <!-- User define custom dynamic css file -->
     @if (File::exists('Modules/CMS/Resources/assets/css/user-custom.css'))
         <link rel="stylesheet" href="{{ asset('Modules/CMS/Resources/assets/css/user-custom.css?v=' . time()) }}">
     @endif
     
-    @if (file_exists(base_path('public/js/lang/' . config('app.locale') . '.js')))
-        <script src="{{ asset('public/js/lang/' . config('app.locale') . '.js') }}"></script>
+    @if (file_exists(base_path('js/lang/' . config('app.locale') . '.js')))
+        <script src="{{ asset('js/lang/' . config('app.locale') . '.js') }}"></script>
     @else
         <script type="text/javascript">
             const translates = {};
@@ -118,13 +118,13 @@ src="https://www.facebook.com/tr?id=2355381278153504&ev=PageView&noscript=1"
         @endauth
     </script>
     <!-- Required Js -->
-    <script src="{{ asset('public/dist/js/jquery.min.js') }}"></script>
+    <script src="{{ asset('dist/js/jquery.min.js') }}"></script>
     <!-- Affiliate Code Common Header -->
     
     @doAction('before_site_head')
 </head>
 
-<body <?php echo apply_filters('site_body_tag', 'class="antialiased min-h-screen"'); ?> x-data="{ 'layout': 'grid' }">
+<body <?php echo apply_filters('site_body_tag', 'class="min-h-screen antialiased"'); ?> x-data="{ 'layout': 'grid' }">
     @doAction('after_site_body')
     @php
 
@@ -192,20 +192,20 @@ src="https://www.facebook.com/tr?id=2355381278153504&ev=PageView&noscript=1"
     @include('../site/layouts.includes.product_view')
 
 
-    <script src="{{ asset('public/dist/js/custom/site/formatting.min.js') }}"></script>
-    <script src="{{ asset('public/frontend/assets/swiper/swiper-bundle.min.js') }}"></script>
+    <script src="{{ asset('dist/js/custom/site/formatting.min.js') }}"></script>
+    <script src="{{ asset('frontend/assets/swiper/swiper-bundle.min.js') }}"></script>
 
     <!-- Custom Js -->
-    <script src="{{ asset('public/dist/plugins/jQueryUI/jquery-ui.min.js') }}"></script>
-    <script src="{{ asset('public/frontend/assets/js/alpine.min.js') }}" defer></script>
-    <script src="{{ asset('public/dist/js/custom/site/drawer.min.js') }}"></script>
-    <script src="{{ asset('public/frontend/assets/js/script.min.js') }}"></script>
-    <script src="{{ asset('public/dist/js/custom/site/cart.min.js') }}"></script>
-    <script src="{{ asset('public/dist/js/custom/site/lang.min.js') }}"></script>
-    <script src="{{ asset('public/dist/js/site-nav.min.js') }}"></script>
-    <script src="{{ asset('public/frontend/assets/js/sweet-alert2.min.js') }}"></script>
-    <script src="{{ asset('public/dist/js/custom/site/site.min.js') }}"></script>
-    <script src="{{ asset('public/frontend/assets/js/main.min.js') }}"></script>
+    <script src="{{ asset('dist/plugins/jQueryUI/jquery-ui.min.js') }}"></script>
+    <script src="{{ asset('frontend/assets/js/alpine.min.js') }}" defer></script>
+    <script src="{{ asset('dist/js/custom/site/drawer.min.js') }}"></script>
+    <script src="{{ asset('frontend/assets/js/script.min.js') }}"></script>
+    <script src="{{ asset('dist/js/custom/site/cart.min.js') }}"></script>
+    <script src="{{ asset('dist/js/custom/site/lang.min.js') }}"></script>
+    <script src="{{ asset('dist/js/site-nav.min.js') }}"></script>
+    <script src="{{ asset('frontend/assets/js/sweet-alert2.min.js') }}"></script>
+    <script src="{{ asset('dist/js/custom/site/site.min.js') }}"></script>
+    <script src="{{ asset('frontend/assets/js/main.min.js') }}"></script>
 
     @doAction("before_site_js_{$view_name}")
 

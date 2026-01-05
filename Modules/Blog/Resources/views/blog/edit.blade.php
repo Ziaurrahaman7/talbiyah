@@ -1,7 +1,7 @@
 @extends('admin.layouts.app')
 @section('page_title', __('Edit :x', ['x' => __('Blog')]))
 @section('css')
-    <link rel="stylesheet" href="{{ asset('public/datta-able/plugins/summer-note/summernote-lite.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('distdatta-able/plugins/summer-note/summernote-lite.min.css') }}">
     <link rel="stylesheet" href="{{ asset('Modules/MediaManager/Resources/assets/css/media-manager.min.css') }}">
     <link rel="stylesheet" href="{{ asset('Modules/Blog/Resources/assets/css/blog.min.css') }}">
 @endsection
@@ -142,7 +142,7 @@
     @include('mediamanager::image.modal_image')
 @endsection
 @section('js')
-    <script src="{{ asset('public/datta-able/plugins/summer-note/summernote-lite.min.js') }}"></script>
-    <script src="{{ asset('public/dist/js/custom/validation.min.js') }}"></script>
+    <script src="{{ asset('distdatta-able/plugins/summer-note/summernote-lite.min.js') }}"></script>
+    <script src="{{ asset('dist/js/custom/validation.min.js') }}"></script>
     <script src="{{ asset('Modules/Blog/Resources/assets/js/blog.min.js') }}"></script>
 @endsection

@@ -65,7 +65,7 @@
                                                                         <i class="fa fa-times"></i>
                                                                     </div>
                                                                     <img class="upl-img neg-transition-scale" class="p-1"
-                                                                        src="{{ asset('public/uploads') . DIRECTORY_SEPARATOR . $iconbox['image'] }}"
+                                                                        src="{{ asset('distuploads') . DIRECTORY_SEPARATOR . $iconbox['image'] }}"
                                                                         alt="{{ __('Image') }}">
                                                                     <input type="hidden"
                                                                         name="iconbox[{{ $loop->index }}][image]"
@@ -226,7 +226,7 @@
                                                             <i class="fa fa-times"></i>
                                                         </div>
                                                         <img class="upl-img neg-transition-scale" class="p-1"
-                                                            src="{{ asset('public/uploads') . DIRECTORY_SEPARATOR . $sidebox['image'] }}"
+                                                            src="{{ asset('distuploads') . DIRECTORY_SEPARATOR . $sidebox['image'] }}"
                                                             alt="{{ __('Image') }}">
                                                         <input type="hidden"
                                                             name="sidebox[image]"

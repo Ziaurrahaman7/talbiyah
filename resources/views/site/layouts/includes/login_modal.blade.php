@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="{{ asset('public/dist/css/intl-tel-input/intlTelInput.min.css') }}">
+<link rel="stylesheet" href="{{ asset('dist/css/intl-tel-input/intlTelInput.min.css') }}">
 
 <!--Overlay Effect-->
 <div class="fixed hidden items-center inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto z-50" id="my-modal">
@@ -770,13 +770,13 @@
 @endphp
 
 <script>
-    const utilJs = "{{ asset('public/dist/js/intl-tel-input/utils.min.js') }}";
+    const utilJs = "{{ asset('dist/js/intl-tel-input/utils.min.js') }}";
     const isActiveDefaultSignupStatus = "{{ preference('user_default_signup_status') == 'Active' }}"
 </script>
-<script src="{{ asset('public/dist/js/intl-tel-input/intlTelInput.min.js') }}"></script>
-<script src="{{ asset('public/dist/js/custom/site/set-dial-code.min.js') }}"></script>
+<script src="{{ asset('dist/js/intl-tel-input/intlTelInput.min.js') }}"></script>
+<script src="{{ asset('dist/js/custom/site/set-dial-code.min.js') }}"></script>
 
-<script src="{{ asset('public/dist/js/custom/site/password-validation.min.js') }}"></script>
-<script src="{{ asset('public/dist/js/custom/site/login.min.js') }}"></script>
-<script src="{{ asset('public/dist/js/custom/validation.min.js') }}"></script>
+<script src="{{ asset('dist/js/custom/site/password-validation.min.js') }}"></script>
+<script src="{{ asset('dist/js/custom/site/login.min.js') }}"></script>
+<script src="{{ asset('dist/js/custom/validation.min.js') }}"></script>
 

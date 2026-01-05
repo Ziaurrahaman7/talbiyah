@@ -244,6 +244,6 @@
     </section>
 @endsection
 @section('js')
-    <script src="{{ asset('public/dist/js/custom/site/wishlist.min.js') }}"></script>
-    <script src="{{ asset('public/dist/js/custom/site/vendor-profile.min.js') }}"></script>
+    <script src="{{ asset('dist/js/custom/site/wishlist.min.js') }}"></script>
+    <script src="{{ asset('dist/js/custom/site/vendor-profile.min.js') }}"></script>
 @endsection

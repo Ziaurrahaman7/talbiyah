@@ -25,7 +25,7 @@ class AcceptSellerRequestNotification extends Notification
      *
      * @var string
      */
-    public static $image = 'public/frontend/img/seller.png';
+    public static $image = 'frontend/img/seller.png';
 
     public function __construct($request)
     {

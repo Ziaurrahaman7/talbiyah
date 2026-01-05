@@ -85,7 +85,7 @@
     @else
         <div class="mx-4 lg:mx-4 xl:mx-32 2xl:mx-64 my-275p 3xl:mx-92">
             <div>
-                <img class="items-center mx-auto object-cover" src="{{ asset('public/frontend/assets/img/blog/sorry.svg') }}" alt="{{ __('Image') }}">
+                <img class="items-center mx-auto object-cover" src="{{ asset('frontend/assets/img/blog/sorry.svg') }}" alt="{{ __('Image') }}">
                 <p class="text-center dm-sans font-medium text-32 leading-10 text-gray-14 mt-30p">
                     {{ __('We’re sorry!') }}</p>
                 <p class="text-center dm-sans font-medium text-32 leading-10 text-gray-14">{{ __('Blog post are not available') }}</p>

@@ -2,7 +2,7 @@
         <div class="container">
             <div class="pt-8 flex">
                 <div class="flex-shrink-0 flex flex-col">
-                    <img class="w-14 h-14 ltr:mr-4 rtl:ml-4 inline-flex items-center justify-center rounded-full bg-indigo-100 flex-shrink-0 neg-transition-scale" src="{{ isset($review->user) ? optional($review->user)->fileUrl() : asset('public/dist/img/default-image.png') }}" alt="{{ __('Coustomer image') }}">
+                    <img class="w-14 h-14 ltr:mr-4 rtl:ml-4 inline-flex items-center justify-center rounded-full bg-indigo-100 flex-shrink-0 neg-transition-scale" src="{{ isset($review->user) ? optional($review->user)->fileUrl() : asset('dist/img/default-image.png') }}" alt="{{ __('Coustomer image') }}">
                 </div>
                 <div class="md:flex-grow">
                     <div class="flex justify-between">

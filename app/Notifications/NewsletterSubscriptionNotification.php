@@ -20,7 +20,7 @@ class NewsletterSubscriptionNotification extends Notification
      *
      * @var string
      */
-    public static $image = 'public/frontend/img/newsletter.png';
+    public static $image = 'frontend/img/newsletter.png';
 
     public function __construct($request)
     {

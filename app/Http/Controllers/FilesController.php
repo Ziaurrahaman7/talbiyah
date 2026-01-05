@@ -26,7 +26,7 @@ class FilesController extends Controller
     {
         if (! empty($_FILES['attachment'])) {
             $uploaderId = $request->uploader_id;
-            $tempDirectory = 'public/contents/temp';
+            $tempDirectory = 'distcontents/temp';
             if (! file_exists($tempDirectory)) {
                 mkdir($tempDirectory, config('app.filePermission'), true);
             }

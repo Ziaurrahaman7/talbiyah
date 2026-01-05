@@ -25,7 +25,7 @@ class UserPasswordSetNotification extends Notification
      *
      * @var string
      */
-    public static $image = 'public/frontend/img/password.png';
+    public static $image = 'frontend/img/password.png';
 
     public function __construct($request)
     {

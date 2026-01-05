@@ -80,7 +80,7 @@
                     <div class="d-flex align-items-center">
                         <div class="position-relative border u-img-box">
                             <img class="h-100 w-100 object-fit-contain variation-image-placeholder"
-                                 src="{{ asset('public/dist/img/not.svg') }}" />
+                                 src="{{ asset('dist/img/not.svg') }}" />
                         </div>
                         <a href="javascript:void(0)" data-name="meta_image[{{ $idx }}]" data-val="single"
                            class="btn-cancels ml-20p variation-image has-media-manager">

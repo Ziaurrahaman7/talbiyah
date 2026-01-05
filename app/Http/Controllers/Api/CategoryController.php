@@ -101,7 +101,7 @@ class CategoryController extends Controller
         if (! empty($categoryId)) {
             // File Upload
             if (isset($request->image) && ! empty($request->image) && $request->hasFile('image')) {
-                $path = createDirectory('public/uploads/category');
+                $path = createDirectory('distuploads/category');
                 (new File())->store(
                     [$request->image],
                     $path,
@@ -168,14 +168,14 @@ class CategoryController extends Controller
                             'CATEGORY',
                             $id,
                             ['ids' => [$fileIds], 'isExceptId' => false],
-                            $path = 'public/uploads/category'
+                            $path = 'distuploads/category'
                         );
                     }
                     //end region
 
                     //region store files
                     if (isset($id) && ! empty($id) && $request->hasFile('image')) {
-                        $path = createDirectory('public/uploads/category');
+                        $path = createDirectory('distuploads/category');
                         $fileIdList = (new File())->store(
                             [$request->image],
                             $path,

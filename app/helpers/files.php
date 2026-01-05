@@ -367,7 +367,7 @@ if (! function_exists('initializeMpdf')) {
      */
     function initializeMpdf(array $options = [])
     {
-        $path = createDirectory('public/datta-able/pdf');
+        $path = createDirectory('distdatta-able/pdf');
 
         $defaultConfig = (new Mpdf\Config\ConfigVariables())->getDefaults();
         $fontDirs = $defaultConfig['fontDir'];
@@ -412,7 +412,7 @@ if (! function_exists('getPdfFont')) {
         switch ($languageShortCode) {
             case 'ar':
                 $fontFamily['name'] = 'Tajawal' . ', sans-serif';
-                $fontFamily['link'] = asset('public/dist/fonts/tajawal.css?v1');
+                $fontFamily['link'] = asset('dist/fonts/tajawal.css?v1');
 
                 break;
 

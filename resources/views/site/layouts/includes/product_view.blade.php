@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="{{ asset('public/frontend/assets/swiper/swiper-bundle.min.css') }}">
+<link rel="stylesheet" href="{{ asset('frontend/assets/swiper/swiper-bundle.min.css') }}">
 <div id="item-view-load">
     <!--Overlay Effect-->
     <div class="fixed hidden items-center inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full z-50"
@@ -492,5 +492,5 @@
         var stockDisplayFormat = "{{ preference('stock_display_format') }}"
         var videoExtensions = @json(getFileExtensions(6));
     </script>
-    <script src="{{ asset('public/frontend/assets/swiper/swiper-bundle.min.js') }}"></script>
-    <script src="{{ asset('public/dist/js/custom/site/product-view.min.js') }}"></script>
+    <script src="{{ asset('frontend/assets/swiper/swiper-bundle.min.js') }}"></script>
+    <script src="{{ asset('dist/js/custom/site/product-view.min.js') }}"></script>

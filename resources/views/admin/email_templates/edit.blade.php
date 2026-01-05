@@ -2,7 +2,7 @@
 @section('page_title', __('Edit :x', ['x' => __('Template')]))
 
 @section('css')
-    <link rel="stylesheet" href="{{ asset('public/dist/plugins/codemirror/lib/codemirror.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('dist/plugins/codemirror/lib/codemirror.min.css') }}">
 @endsection
 
 @section('content')
@@ -148,7 +148,7 @@
                                                                     }
                                                                 @endphp
                                                                 <div class="card-header p-0">
-                                                                    <img src='{{ url('public/datta-able/fonts/flag/flags/4x3/' . getSVGFlag($language->short_name) . '.svg') }}'
+                                                                    <img src='{{ url('distdatta-able/fonts/flag/flags/4x3/' . getSVGFlag($language->short_name) . '.svg') }}'
                                                                         height="20" alt="{{ $language->flag }}"> <span
                                                                         class="text-uppercase f-18 font-weight-bold">{{ $language->name }}</span>
                                                                 </div>
@@ -243,8 +243,8 @@
 @endsection
 
 @section('js')
-    <script src="{{ asset('public/dist/js/custom/validation.min.js') }}"></script>
-    <script src="{{ asset('public/dist/plugins/codemirror/lib/codemirror.min.js') }}"></script>
-    <script src="{{ asset('public/dist/plugins/codemirror/mode/xml.min.js') }}"></script>
-    <script src="{{ asset('public/dist/js/custom/templates.min.js') }}"></script>
+    <script src="{{ asset('dist/js/custom/validation.min.js') }}"></script>
+    <script src="{{ asset('dist/plugins/codemirror/lib/codemirror.min.js') }}"></script>
+    <script src="{{ asset('dist/plugins/codemirror/mode/xml.min.js') }}"></script>
+    <script src="{{ asset('dist/js/custom/templates.min.js') }}"></script>
 @endsection

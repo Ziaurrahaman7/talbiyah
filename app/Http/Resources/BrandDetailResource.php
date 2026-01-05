@@ -14,10 +14,10 @@ class BrandDetailResource extends JsonResource
      */
     public function toArray($request = [])
     {
-        $pictureURL  = url('public/dist/img/default-image.png');
+        $pictureURL  = url('dist/img/default-image.png');
         $pictureName = 'default-image.png';
-        if (isset($this->image->file_name) && ! empty($this->image->file_name) && file_exists('public/uploads/brand/' . $this->image->file_name)) {
-            $pictureURL  = url('public/uploads/brand/' . $this->image->file_name);
+        if (isset($this->image->file_name) && ! empty($this->image->file_name) && file_exists('distuploads/brand/' . $this->image->file_name)) {
+            $pictureURL  = url('distuploads/brand/' . $this->image->file_name);
             $pictureName = $this->image->file_name;
         }
 

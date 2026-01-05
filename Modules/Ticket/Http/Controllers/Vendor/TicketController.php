@@ -194,7 +194,7 @@ class TicketController extends Controller
 
         $data['ticketReplies']      = (new Thread())->getAllTicketRepliersById($ticket_id);
         $data['ticketStatus'] = ThreadStatus::where('id', '!=', $data['ticketDetails']->thread_status_id)->orderBy('name')->get();
-        $data['filePath'] = 'public/uploads';
+        $data['filePath'] = 'distuploads';
         $data['assignee'] = User::where('status', 'active')->get();
 
         return view('ticket::reply', $data);
@@ -285,7 +285,7 @@ class TicketController extends Controller
             $replyFiles[$ticketReply->id] = (new File())->getFiles('Ticket Reply', $ticketReply->id);
         }
         $data['replyFiles'] = $replyFiles;
-        $data['filePath'] = 'public/uploads/tickets';
+        $data['filePath'] = 'distuploads/tickets';
 
         return view('admin.customerPanel.ticket.reply', $data);
     }

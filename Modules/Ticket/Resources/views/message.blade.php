@@ -68,6 +68,6 @@
 @endpush
 
 @push('scripts')
-    <script src="{{ asset('public/dist/js/xss.min.js') }}"></script>
+    <script src="{{ asset('dist/js/xss.min.js') }}"></script>
     <script src="{{ asset('Modules/Ticket/Resources/assets/js/chat.min.js') }}"></script>
 @endpush

@@ -1,8 +1,8 @@
 /node_modules
-/public/hot
-/public/storage
-/public/uploads
-/public/contents
+/disthot
+/diststorage
+/distuploads
+/distcontents
 /uploads
 /storage/laravel-backups
 /storage/*.key

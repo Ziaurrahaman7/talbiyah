@@ -130,7 +130,7 @@
                                                name="meta_image[{{ $idx }}]">
                                     @endif
                                     <img class="h-100 w-100 object-fit-contain variation-image-placeholder"
-                                         src="{{ $image ? $image['url'] : asset('public/dist/img/not.svg') }}" />
+                                         src="{{ $image ? $image['url'] : asset('dist/img/not.svg') }}" />
                                 </div>
                                 <a href="javascript:void(0)" data-name="meta_image[{{ $idx }}]"
                                    data-val="single" class="btn-cancels ml-20p {{ $image ? 'variation-image-remove' : 'variation-image has-media-manager' }}">

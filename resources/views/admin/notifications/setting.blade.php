@@ -1,7 +1,7 @@
 @extends('admin.layouts.app')
 @section('page_title', __('Notifications Setting'))
 @section('css')
-    <link rel="stylesheet" href="{{ asset('public/dist/css/notification.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('dist/css/notification.min.css') }}">
 @endsection
 @section('content')
 <!-- Main content -->
@@ -78,5 +78,5 @@
 @endsection
 
 @section('js')
-    <script src="{{ asset('public/dist/js/custom/notification.min.js') }}"></script>
+    <script src="{{ asset('dist/js/custom/notification.min.js') }}"></script>
 @endsection

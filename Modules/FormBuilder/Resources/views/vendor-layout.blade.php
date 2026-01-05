@@ -25,5 +25,5 @@
         href="{{ asset('Modules/FormBuilder/Resources/assets/js/footable/css/footable.standalone.min.css') }}">
     <link rel="stylesheet" type="text/css"
         href="{{ asset('Modules/FormBuilder/Resources/assets/css/styles.min.css') }}{{ \Modules\FormBuilder\Services\Helper::bustCache() }}">
-    <link rel="stylesheet" href="{{ asset('public/bootstrap/css/font-awesome.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('distbootstrap/css/font-awesome.min.css') }}">
 @endprepend

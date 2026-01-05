@@ -129,7 +129,7 @@
                                 <div>
                                     <div class=" items-center flex mb-8 mt-5">
                                         <span class="bg-gray-17 ml-6 h-12 w-12 rounded-sm flex justify-center items-center">
-                                            <img class="w-8 h-8" src="{{ asset('public/frontend/assets/img/product/shoe-2.png') }}" alt="{{ __('Image') }}" />
+                                            <img class="w-8 h-8" src="{{ asset('frontend/assets/img/product/shoe-2.png') }}" alt="{{ __('Image') }}" />
                                         </span>
                                         <div class="ml-8">
                                             <a>
@@ -140,7 +140,7 @@
                                     </div>
                                     <div class="items-center flex mb-8 mt-5">
                                         <span class="bg-gray-17 ml-6 h-12 w-12 rounded-sm flex justify-center items-center">
-                                            <img class="w-8 h-8" src="{{ asset('public/frontend/assets/img/product/shoe-2.png') }}" alt="{{ __('Image') }}" />
+                                            <img class="w-8 h-8" src="{{ asset('frontend/assets/img/product/shoe-2.png') }}" alt="{{ __('Image') }}" />
                                         </span>
                                         <div class="ml-8">
                                             <a>

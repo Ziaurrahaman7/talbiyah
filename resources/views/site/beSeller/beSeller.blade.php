@@ -20,7 +20,7 @@
                 </div>
             </div>
             <div>
-                <img class="2xl:w-850p md:h-521 md:w-532p 2xl:mt-0 xs:w-322p xs:h-52 mx-auto md:mt-16 mt-9" src="{{ asset('public/frontend/assets/img/be-seller/header_image.svg')}}" alt="{{ __('Image') }}">
+                <img class="2xl:w-850p md:h-521 md:w-532p 2xl:mt-0 xs:w-322p xs:h-52 mx-auto md:mt-16 mt-9" src="{{ asset('frontend/assets/img/be-seller/header_image.svg')}}" alt="{{ __('Image') }}">
             </div>
         </div>
     </div>
@@ -33,21 +33,21 @@
         <div class="xl:mx-32 mx-5 2xl:mx-0 grid md:grid-cols-3 grid-cols-1 lg:mt-50p mt-8 lg:gap-10 gap-0">
             <div class="hover:bg-gray-20 hover:rounded-lg cursor-pointer transition ease-in-out delay-130">
                 <img class="mx-auto lg:my-50p mt-30p mb-6 lg:w-105p lg:h-84p w-72p h-14"
-                    src="{{ asset('public/frontend/assets/img/be-seller/low-fees.svg')}}" alt="{{ __('Image') }}">
+                    src="{{ asset('frontend/assets/img/be-seller/low-fees.svg')}}" alt="{{ __('Image') }}">
                 <p class="text-gray-12 lg:text-22 text-lg dm-bold font-bold lg:mb-7 mb-3 uppercase">{{ __('Low fees') }}</p>
                 <p class="text-gray-10 lg:text-base text-sm lg:mx-6 mx-7 lg:mb-70p mb-7 roboto-medium font-medium">{{ __('It
                     doesn’t take much to list your items and once you make a sale, Multivendor’s transaction fee is just 2.5%') }}</p>
             </div>
             <div class="hover:bg-gray-20 hover:rounded-lg cursor-pointer transition ease-in-out delay-130">
                 <img class="mx-auto lg:mt-50p lg:mb-14 mb-6 mt-30p lg:w-90p lg:h-78p w-60p h-53p"
-                    src="{{ asset('public/frontend/assets/img/be-seller/swift.svg') }}" alt="{{ __('Image') }}">
+                    src="{{ asset('frontend/assets/img/be-seller/swift.svg') }}" alt="{{ __('Image') }}">
                 <p class="text-gray-12 lg:text-22 text-lg dm-bold font-bold lg:mb-7 mb-3 uppercase">{{ __('Swift System') }}</p>
                 <p class="text-gray-10 lg:text-base text-sm lg:mx-6 mx-7 lg:mb-66p mb-7 roboto-medium font-medium">{{ __('Our tools
                     are designed based on the best e-commerce experience for both sellers and customers.') }}</p>
             </div>
             <div class="hover:bg-gray-20 hover:rounded-lg cursor-pointer transition ease-in-out delay-130">
                 <img class="mx-auto lg:my-50p mt-30p mb-6 lg:w-105p lg:h-84p w-72p h-14"
-                    src="{{ asset('public/frontend/assets/img/be-seller/support.svg') }}" alt="{{ __('Image') }}">
+                    src="{{ asset('frontend/assets/img/be-seller/support.svg') }}" alt="{{ __('Image') }}">
                 <p class="text-gray-12 lg:text-22 text-lg dm-bold font-bold lg:mb-7 mb-3 uppercase">{{ __('24/7 support') }}</p>
                 <p class="text-gray-10 lg:text-base text-sm lg:mx-6 mx-7 lg:mb-70p mb-7 roboto-medium font-medium">{{ __('We have a
                     well trained dedicated service team that is available all the time for any troubleshooting.')}}</p>
@@ -68,20 +68,20 @@
                     <div class="roboto-medium font-medium text-gray-10 lg:text-base text-sm ">
                         <div class="flex lg:items-end lg:justify-end items-start text-left lg:text-right justify-start mb-5">
                             <img class="ltr:mr-3 rtl:ml-3 mt-1 lg:hidden block"
-                                src="{{ asset('public/frontend/assets/img/be-seller/arrow-left.svg') }}" alt="{{ __('Image') }}">
+                                src="{{ asset('frontend/assets/img/be-seller/arrow-left.svg') }}" alt="{{ __('Image') }}">
                             <p>{{ __('Fill in the sign up form with your personal and shop details') }}</p>
-                            <img class="ltr:ml-3 rtl:mr-3 mb-1.5 lg:block hidden" src="{{ asset('public/frontend/assets/img/be-seller/arrow-right.svg') }}" alt="{{ __('Image') }}">
+                            <img class="ltr:ml-3 rtl:mr-3 mb-1.5 lg:block hidden" src="{{ asset('frontend/assets/img/be-seller/arrow-right.svg') }}" alt="{{ __('Image') }}">
                         </div>
                         <div class="flex lg:items-end lg:justify-end items-start text-left lg:text-right justify-start mb-5">
-                            <img class="ltr:mr-3 rtl:ml-3 mt-1 lg:hidden block" src="{{ asset('public/frontend/assets/img/be-seller/arrow-left.svg') }}" alt="{{ __('Image') }}">
+                            <img class="ltr:mr-3 rtl:ml-3 mt-1 lg:hidden block" src="{{ asset('frontend/assets/img/be-seller/arrow-left.svg') }}" alt="{{ __('Image') }}">
                             <p>{{ __('Login to the vendor dashboard account with your credentials') }}</p>
-                            <img class="ltr:ml-3 rtl:mr-3 mb-1.5 lg:block hidden" src="{{ asset('public/frontend/assets/img/be-seller/arrow-right.svg') }}" alt="{{ __('Image') }}">
+                            <img class="ltr:ml-3 rtl:mr-3 mb-1.5 lg:block hidden" src="{{ asset('frontend/assets/img/be-seller/arrow-right.svg') }}" alt="{{ __('Image') }}">
                         </div>
                         <div class="flex lg:items-end lg:justify-end items-start text-left justify-start mb-5">
                             <img class="ltr:mr-3 rtl:ml-3 mt-1 lg:hidden block"
-                                src="{{ asset('public/frontend/assets/img/be-seller/arrow-left.svg') }}" alt="{{ __('Image') }}">
+                                src="{{ asset('frontend/assets/img/be-seller/arrow-left.svg') }}" alt="{{ __('Image') }}">
                             <p>{{ __('List your products by providing all relevant information') }}</p>
-                            <img class="ltr:ml-3 rtl:mr-3 mb-1.5 lg:block hidden" src="{{ asset('public/frontend/assets/img/be-seller/arrow-right.svg') }}" alt="{{ __('Image') }}">
+                            <img class="ltr:ml-3 rtl:mr-3 mb-1.5 lg:block hidden" src="{{ asset('frontend/assets/img/be-seller/arrow-right.svg') }}" alt="{{ __('Image') }}">
                         </div>
                     </div>
                 </div>
@@ -99,15 +99,15 @@
                         </div>
                     </div>
                     <span class="lg:block hidden h-300p">
-                        <img src="{{ asset('public/frontend/assets/img/be-seller/shopping-icon.svg') }}" alt="{{ __('Image') }}">
+                        <img src="{{ asset('frontend/assets/img/be-seller/shopping-icon.svg') }}" alt="{{ __('Image') }}">
                     </span>
                     <span class="lg:hidden block mx-auto mt-6">
-                        <img src="{{ asset('public/frontend/assets/img/be-seller/shopping-small-icon.svg') }}" alt="{{ __('Image') }}">
+                        <img src="{{ asset('frontend/assets/img/be-seller/shopping-small-icon.svg') }}" alt="{{ __('Image') }}">
                     </span>
                 </div>
                 <div class=" flex ltr:mr-60p ltr:justify-end rtl:ml-60p rtl:justify-start">
                     <span class="w-421-h-376 lg:block hidden">
-                        <img src="{{ asset('public/frontend/assets/img/be-seller/shopping-icon-2.svg') }}" alt="{{ __('Image') }}">
+                        <img src="{{ asset('frontend/assets/img/be-seller/shopping-icon-2.svg') }}" alt="{{ __('Image') }}">
                     </span>
                 </div>
                 <div class="flex">
@@ -129,39 +129,39 @@
                             sell your products') }}</p>
                         <div class="roboto-medium xxs:px-10 sm:mx-0 font-medium text-gray-10 lg:text-base text-sm">
                             <div class="flex ltr:text-left ltr:items-start rtl:text-right rtl:items-end justify-start mb-5">
-                                <img class="ltr:mr-3 rtl:ml-3 mt-1" src="{{ asset('public/frontend/assets/img/be-seller/arrow-left.svg') }}" alt="{{ __('Image') }}">
+                                <img class="ltr:mr-3 rtl:ml-3 mt-1" src="{{ asset('frontend/assets/img/be-seller/arrow-left.svg') }}" alt="{{ __('Image') }}">
                                 <p>{{ __('Start selling once products are listed') }}</p>
                             </div>
                             <div class="flex items-start ltr:text-left ltr:items-start rtl:text-right rtl:items-end justify-start mb-5">
                                 <img class="ltr:mr-3 rtl:ml-3 mt-1"
-                                    src="{{ asset('public/frontend/assets/img/be-seller/arrow-left.svg') }}" alt="{{ __('Image') }}">
+                                    src="{{ asset('frontend/assets/img/be-seller/arrow-left.svg') }}" alt="{{ __('Image') }}">
                                 <p>{{ __('Receive orders and manage them through your vendor dashboard account') }}</p>
                             </div>
                             <div class="flex items-start ltr:text-left ltr:items-start rtl:text-right rtl:items-end justify-start mb-5">
                                 <img class="ltr:mr-3 rtl:ml-3 mt-1"
-                                    src="{{ asset('public/frontend/assets/img/be-seller/arrow-left.svg') }}" alt="{{ __('Image') }}">
+                                    src="{{ asset('frontend/assets/img/be-seller/arrow-left.svg') }}" alt="{{ __('Image') }}">
                                 <p>{{ __('On receiving orders, simply package the product leave your worries to us.') }}</p>
                             </div>
                         </div>
                     </div>
                 </div>
                 <img class="lg:hidden block mx-auto mt-6"
-                    src="{{ asset('public/frontend/assets/img/be-seller/shopping-small-4.svg') }}" alt="{{ __('Image') }}">
+                    src="{{ asset('frontend/assets/img/be-seller/shopping-small-4.svg') }}" alt="{{ __('Image') }}">
                 <div class="ltr:lg:mr-60p rtl:lg:ml-60p mx-auto lg:text-right lg:mt-0 mt-11 text-center">
                     <p class="dm-bold font-bold lg:text-26 text-lg text-gray-12 uppercase lg:mb-2 mb-2.5">{{ __('Step 3') }}</p>
                     <p class="dm-sans font-medium lg:text-xl text-base text-gray-12 lg:mb-50p mb-7">{{ __('Register & list your
                         products') }}</p>
                     <div class="roboto-medium xxs:mx-10 sm:mx-16 lg:mx-0 font-medium text-gray-10 text-base">
                         <div class="flex lg:items-end lg:justify-end items-start ltr:text-left rtl:text-right lg:text-right justify-start mb-5">
-                            <img class="ltr:mr-3 rtl:ml-3 mt-1.5 lg:hidden block" src="{{ asset('public/frontend/assets/img/be-seller/arrow-left.svg') }}" alt="{{ __('Image') }}">
+                            <img class="ltr:mr-3 rtl:ml-3 mt-1.5 lg:hidden block" src="{{ asset('frontend/assets/img/be-seller/arrow-left.svg') }}" alt="{{ __('Image') }}">
                             <p>{{ __('Receive quick and hassle-free payments directly in your account') }}</p>
-                            <img class="ltr:ml-3 rtl:mr-3 mb-1.5 lg:block hidden" src="{{ asset('public/frontend/assets/img/be-seller/arrow-right.svg') }}" alt="{{ __('Image') }}">
+                            <img class="ltr:ml-3 rtl:mr-3 mb-1.5 lg:block hidden" src="{{ asset('frontend/assets/img/be-seller/arrow-right.svg') }}" alt="{{ __('Image') }}">
                         </div>
                         <div class="flex lg:items-end lg:justify-end items-start ltr:text-left rtl:text-right lg:text-right justify-start mb-5">
-                            <img class="ltr:mr-3 rtl:ml-3 mt-1 lg:hidden block" src="{{ asset('public/frontend/assets/img/be-seller/arrow-left.svg') }}" alt="{{ __('Image') }}">
+                            <img class="ltr:mr-3 rtl:ml-3 mt-1 lg:hidden block" src="{{ asset('frontend/assets/img/be-seller/arrow-left.svg') }}" alt="{{ __('Image') }}">
                             <p class="ltr:3xl:pl-20 ltr:xl:pl-0 ltr:pl-0 rtl:3xl:pr-20 rtl:xl:pr-0 rtl:pr-0">{{ __('Expand your business. Go furthur through our seasonal
                                 sales, offers and events. Rank up and become an asset.') }}</p>
-                            <img class="ltr:ml-3 rtl:mr-3 mb-30p lg:block hidden" src="{{ asset('public/frontend/assets/img/be-seller/arrow-right.svg') }}" alt="{{ __('Image') }}">
+                            <img class="ltr:ml-3 rtl:mr-3 mb-30p lg:block hidden" src="{{ asset('frontend/assets/img/be-seller/arrow-right.svg') }}" alt="{{ __('Image') }}">
                         </div>
                     </div>
                 </div>
@@ -175,10 +175,10 @@
                         </div>
                     </div>
                     <span class="h-312p w-441 lg:block hidden">
-                        <img src="{{ asset('public/frontend/assets/img/be-seller/shopping-5.svg') }}" alt="{{ __('Image') }}">
+                        <img src="{{ asset('frontend/assets/img/be-seller/shopping-5.svg') }}" alt="{{ __('Image') }}">
                     </span>
                     <span class="lg:hidden block mx-auto mt-6">
-                        <img src="{{ asset('public/frontend/assets/img/be-seller/shopping-6.svg') }}" alt="{{ __('Image') }}">
+                        <img src="{{ asset('frontend/assets/img/be-seller/shopping-6.svg') }}" alt="{{ __('Image') }}">
                     </span>
                 </div>
             </div>
@@ -210,7 +210,7 @@
                 </div>
             </div>
             <div>
-                <img class="xl:w-532p xl:h-411p xl:mt-0 lg:mt-36 lg:w-400p lg:h-312p mx-auto md:mt-32 mt-0 md:px-0 px-5"src="{{ asset('public/frontend/assets/img/be-seller/human.svg') }}" alt="{{ __('Image') }}">
+                <img class="xl:w-532p xl:h-411p xl:mt-0 lg:mt-36 lg:w-400p lg:h-312p mx-auto md:mt-32 mt-0 md:px-0 px-5"src="{{ asset('frontend/assets/img/be-seller/human.svg') }}" alt="{{ __('Image') }}">
             </div>
         </div>
     </div>
@@ -240,7 +240,7 @@
                 <div class="border md:mt-4 mt-0 mx-0 border-gray-21 rounded-lg">
                     <div class="flex lg:mx-7 mx-15p justify-between">
                         <div class="lg:mt-6 mt-5 flex">
-                            <img class="lg:w-16 lg:h-16 w-54p h-54p"src="{{ asset('public/frontend/assets/img/be-seller/seller-human-icon2.svg') }}" alt="{{ __('Image') }}">
+                            <img class="lg:w-16 lg:h-16 w-54p h-54p"src="{{ asset('frontend/assets/img/be-seller/seller-human-icon2.svg') }}" alt="{{ __('Image') }}">
                             <div class="ltr:xs:ml-18p ltr:lg:ml-2 ltr:x:ml-2 rtl:xs:mr-18p rtl:lg:mr-2 rtl:x:mr-2 mt-5p lg:mt-2">
                                 <p class="text-gray-12 lg:text-xl text-lg dm-sans font-medium">{{ __('Tim Karela') }}</p>
                                 <p class="text-gray-10 mt-5p xs:text-13 x:text-xss text-xs roboto-medium font-medium">{{ __('Co-Owner,
@@ -248,7 +248,7 @@
                             </div>
                         </div>
                         <div class="mt-8">
-                            <img class="lg:w-72p lg:h-47p w-46p h-30p" src="{{ asset('public/frontend/assets/img/be-seller/invert-coma.svg') }}">
+                            <img class="lg:w-72p lg:h-47p w-46p h-30p" src="{{ asset('frontend/assets/img/be-seller/invert-coma.svg') }}">
                         </div>
                     </div>
                     <p class="roboto-medium font-medium lg:text-sm text-13 text-gray-10 lg:mx-7 mx-15p text-justify leading-6 mt-4 mb-5">{{ __('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Enim placerat metus, sit. Ut ullamcorper
@@ -259,21 +259,21 @@
             <div class="lg:flex ltr:md:text-left rtl:md:text-right text-center lg:mt-10 mt-6">
                 <div class="flex md:justify-start justify-center seller-images">
                     <img class="ltr:lg:-mr-6 ltr:-mr-4 rtl:lg:-ml-6 rtl:-ml-4 3xl:w-66p 3xl:h-66p w-12 h-12 "
-                        src="{{ asset('public/frontend/assets/img/be-seller/human-icon-3.svg') }}">
+                        src="{{ asset('frontend/assets/img/be-seller/human-icon-3.svg') }}">
                     <img class="ltr:lg:-mr-6 ltr:-mr-4 rtl:lg:-ml-6 rtl:-ml-4 3xl:w-66p 3xl:h-66p w-12 h-12 "
-                        src="{{ asset('public/frontend/assets/img/be-seller/human-icon-4.svg') }}">
+                        src="{{ asset('frontend/assets/img/be-seller/human-icon-4.svg') }}">
                     <img class="ltr:lg:-mr-6 ltr:-mr-4 rtl:lg:-ml-6 rtl:-ml-4 3xl:w-66p 3xl:h-66p w-12 h-12 "
-                        src="{{ asset('public/frontend/assets/img/be-seller/human-icon-5.svg') }}">
+                        src="{{ asset('frontend/assets/img/be-seller/human-icon-5.svg') }}">
                     <img class="ltr:lg:-mr-6 ltr:-mr-4 rtl:lg:-ml-6 rtl:-ml-4 3xl:w-66p 3xl:h-66p w-12 h-12 "
-                        src="{{ asset('public/frontend/assets/img/be-seller/human-icon-6.svg') }}">
+                        src="{{ asset('frontend/assets/img/be-seller/human-icon-6.svg') }}">
                     <img class="ltr:lg:-mr-6 ltr:-mr-4 rtl:lg:-ml-6 rtl:-ml-4 3xl:w-66p 3xl:h-66p w-12 h-12 "
-                        src="{{ asset('public/frontend/assets/img/be-seller/human-icon-7.svg') }}">
+                        src="{{ asset('frontend/assets/img/be-seller/human-icon-7.svg') }}">
                     <img class="ltr:lg:-mr-6 ltr:-mr-4 rtl:lg:-ml-6 rtl:-ml-4 3xl:w-66p 3xl:h-66p w-12 h-12 "
-                        src="{{ asset('public/frontend/assets/img/be-seller/human-icon-8.svg') }}">
+                        src="{{ asset('frontend/assets/img/be-seller/human-icon-8.svg') }}">
                     <img class="ltr:lg:-mr-6 ltr:-mr-4 rtl:lg:-ml-6 rtl:-ml-4 3xl:w-66p 3xl:h-66p w-12 h-12 "
-                        src="{{ asset('public/frontend/assets/img/be-seller/human-icon-9.svg') }}">
+                        src="{{ asset('frontend/assets/img/be-seller/human-icon-9.svg') }}">
                     <img class="ltr:lg:-mr-6 ltr:-mr-4 rtl:lg:-ml-6 rtl:-ml-4 3xl:w-66p 3xl:h-66p w-12 h-12 "
-                        src="{{ asset('public/frontend/assets/img/be-seller/human-icon-10.svg') }}">
+                        src="{{ asset('frontend/assets/img/be-seller/human-icon-10.svg') }}">
                 </div>
                 <div class="xl:pt-5 md:pt-3 pt-5">
                     <a class="text-gray-12 dm-sans font-medium text-sm ltr:md:ml-11 rtl:ml-0 rtl:md:mr-11 rtl:mr-0" href="javascript:void(0)">{{ __('And many more') }}</a>
@@ -282,7 +282,7 @@
         </div>
         <div class="ltr:xl:ml-70p ltr:lg:ml-5 ltr:ml-0 rtl:xl:mr-70p rtl:lg:mr-5 rtl:mr-0">
             <span>
-                <img class="h-591-w-708 lg:w-411p w-318p h-263p md:px-5 px-0 mx-auto md:mt-0 mt-11" src="{{ asset('public/frontend/assets/img/be-seller/seller-image-1.png') }}" alt="{{ __('Image') }}">
+                <img class="h-591-w-708 lg:w-411p w-318p h-263p md:px-5 px-0 mx-auto md:mt-0 mt-11" src="{{ asset('frontend/assets/img/be-seller/seller-image-1.png') }}" alt="{{ __('Image') }}">
             </span>
         </div>
     </div>
@@ -396,7 +396,7 @@
         <div class="ltr:3xl:ml-92 rtl:xl:ml-32 rtl:3xl:mr-92 rtl:xl:mr-32 2xl:mx-64 md:mx-5 md:flex justify-between">
             <div class="mt-70p md:w-2/5 dm-sans text-gray-12">
                 <div class="items-center flex justify-center md:justify-start">
-                    <img src="{{ asset('public/frontend/assets/img/be-seller/multivendor_logo.svg') }}" alt="{{ __('Image') }}">
+                    <img src="{{ asset('frontend/assets/img/be-seller/multivendor_logo.svg') }}" alt="{{ __('Image') }}">
                 </div>
                 <p class="dm-bold font-bold ltr:lg:mr-32 ltr:lg:ml-0 rtl:lg:ml-32 rtl:lg:mr-0 xs:mx-16 x:8 ltr:md:text-left rtl:md:text-right text-center lg:text-32 text-2xl mt-18p text-gray-12 uppercase">{{ __('Vendor')}}<span class="primary-text-color mx-1.5">{{ __('Mobile app')}}</span>{{ __('Coming soon..')}}</p>
                 <p class="roboto-medium font-medium mt-15p lg:text-base text-sm text-center ltr:md:text-left rtl:md:text-right lg:w-532p md:px-0 px-5 lg:px-0 text-gray-10"> {{ __('We are here to give all the solution you need to run your online business. And that’s why we are coming up with an individual mobile app for our sellers. Stay updated online anywhere anytime.')}}
@@ -420,11 +420,11 @@
                 </div>
             </div>
             <div class="z-index-negative">
-                <img class="w-833-h-744 -mb-32 xl:mt-49p x:px-5 mx-auto mt-50p md:mt-40 m-290 md:-mb-275p md:h-411p md:w-690p" src="{{ asset('public/frontend/assets/img/be-seller/mobile.svg') }}" alt="{{ __('Image') }}">
+                <img class="w-833-h-744 -mb-32 xl:mt-49p x:px-5 mx-auto mt-50p md:mt-40 m-290 md:-mb-275p md:h-411p md:w-690p" src="{{ asset('frontend/assets/img/be-seller/mobile.svg') }}" alt="{{ __('Image') }}">
             </div>
         </div>
     </div>
 @endsection
 @section('js')
-<script src="{{ asset('/public/dist/js/custom/site/be-seller.min.js') }}"></script>
+<script src="{{ asset('/dist/js/custom/site/be-seller.min.js') }}"></script>
 @endsection

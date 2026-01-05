@@ -1,6 +1,6 @@
 @extends('admin.layouts.app')
 @section('css')
-<link rel="stylesheet" href="{{ asset('public/dist/css/user-activity-list.min.css') }}">
+<link rel="stylesheet" href="{{ asset('dist/css/user-activity-list.min.css') }}">
 @endsection
 @section('page_title', __('Users Activity'))
 
@@ -40,5 +40,5 @@
 <script type="text/javascript">
     var searchURI = "{{ route('find.users.ajax') }}";
 </script>
-<script src="{{ asset('public/dist/js/custom/users-activity-list.min.js') }}"></script>
+<script src="{{ asset('dist/js/custom/users-activity-list.min.js') }}"></script>
 @endsection

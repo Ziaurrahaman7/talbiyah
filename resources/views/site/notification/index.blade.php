@@ -155,7 +155,7 @@
                     <div class="flex gap-3 items-center lg:w-[150px] justify-end pb-2 lg:pb-0">                    
                         {{-- read and unread button --}}
                         <a href="javascript:void(0)" data-id="{{ $notification->id }}" class="action-icon marked-action">
-                            <img src="{{ asset('public/frontend/svg/' . ($notification->read_at ? 'icon-eye' : 'icon-eye-off') . '.svg') }}" alt="read svg">   
+                            <img src="{{ asset('frontend/svg/' . ($notification->read_at ? 'icon-eye' : 'icon-eye-off') . '.svg') }}" alt="read svg">   
                         </a>
 
                         <div x-data="{ notific_dlt_modal: false }" :class="{ 'overflow-y-hidden': notific_dlt_modal }">
@@ -226,10 +226,10 @@
     </div>
 @endsection
 @section('js')
- <script src="{{ asset('/public/dist/js/custom/validation.min.js') }}"></script>
+ <script src="{{ asset('/dist/js/custom/validation.min.js') }}"></script>
  <script>
     const markReadUrl = SITE_URL + '/user/notifications/mark-as-read/'
     const markUnreadUrl = SITE_URL + '/user/notifications/mark-as-unread/'
 </script>
-<script src="{{ asset('public/dist/js/custom/notification.min.js') }}"></script>
+<script src="{{ asset('dist/js/custom/notification.min.js') }}"></script>
 @endsection

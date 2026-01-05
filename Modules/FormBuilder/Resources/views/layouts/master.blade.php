@@ -17,23 +17,23 @@
 
     <link rel="stylesheet" type="text/css"
         href="{{ asset('Modules/FormBuilder/Resources/assets/js/footable/css/footable.standalone.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('public/datta-able/fonts/fontawesome/css/fontawesome-all.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('distdatta-able/fonts/fontawesome/css/fontawesome-all.min.css') }}">
     <!-- vendor css -->
-    <link rel="stylesheet" href="{{ asset('public/datta-able/plugins/bootstrap-v5/css/bootstrap.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('public/datta-able/css/style.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('public/datta-able/fonts/feather/css/feather.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('distdatta-able/plugins/bootstrap-v5/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('distdatta-able/css/style.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('distdatta-able/fonts/feather/css/feather.min.css') }}">
     <link rel="stylesheet"
-        href="{{ asset('public/datta-able/plugins/jquery-scrollbar/css/jquery.scrollbar.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('public/datta-able/fonts/datta/datta-icon.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('public/datta-able/plugins/jquery-scrollbar/css/perfect-scrollbar.min.css') }}">
+        href="{{ asset('distdatta-able/plugins/jquery-scrollbar/css/jquery.scrollbar.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('distdatta-able/fonts/datta/datta-icon.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('distdatta-able/plugins/jquery-scrollbar/css/perfect-scrollbar.min.css') }}">
 
 
-    <link rel="stylesheet" href="{{ asset('public/dist/css/custom.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('dist/css/custom.min.css') }}">
     <link rel="stylesheet" type="text/css"
         href="{{ asset('Modules/FormBuilder/Resources/assets/css/styles.min.css') }}">
     @yield('css')
-    @if(file_exists(base_path('public/js/lang/' . config('app.locale') . '.js')))
-        <script src="{{ asset('public/js/lang/' . config('app.locale') . '.js') }}"></script>
+    @if(file_exists(base_path('distjs/lang/' . config('app.locale') . '.js')))
+        <script src="{{ asset('distjs/lang/' . config('app.locale') . '.js') }}"></script>
     @else
         <script type="text/javascript">const translates = {}</script>
     @endif
@@ -61,10 +61,10 @@
         </div>
     </div>
 
-    <script src="{{ asset('public/datta-able/plugins/bootstrap-v5/js/popper.min.js') }}"></script>
-    <script src="{{ asset('public/datta-able/plugins/bootstrap-v5/js/jquery.min.js') }}"></script>
-    <script src="{{ asset('public/datta-able/plugins/bootstrap-v5/js/slim.min.js') }}"></script>
-    <script src="{{ asset('public/datta-able/plugins/bootstrap-v5/js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('distdatta-able/plugins/bootstrap-v5/js/popper.min.js') }}"></script>
+    <script src="{{ asset('distdatta-able/plugins/bootstrap-v5/js/jquery.min.js') }}"></script>
+    <script src="{{ asset('distdatta-able/plugins/bootstrap-v5/js/slim.min.js') }}"></script>
+    <script src="{{ asset('distdatta-able/plugins/bootstrap-v5/js/bootstrap.min.js') }}"></script>
 
     <script type="text/javascript">
         window.FormBuilder = {

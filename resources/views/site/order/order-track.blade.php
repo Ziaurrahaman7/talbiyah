@@ -38,7 +38,7 @@
 
             <div class="md:mt-58p mt-0 w-full col-span-2 lg:flex lg:justify-end relative">
                 <span class="mt-2 sm:mt-0 sm:h-468p w-649p animate LtrfadeInRight RtlfadeInLeft">
-                    <img class="neg-transition-scale" src="{{ asset('public/frontend/assets/img/be-seller/d-v-man.png') }}" alt="img">
+                    <img class="neg-transition-scale" src="{{ asset('frontend/assets/img/be-seller/d-v-man.png') }}" alt="img">
                 </span>
             </div>
         </div>
@@ -47,6 +47,6 @@
 @endsection
 
 @section('js')
-    <script src="{{ asset('public/dist/js/custom/site/order-track.min.js') }}"></script>
+    <script src="{{ asset('dist/js/custom/site/order-track.min.js') }}"></script>
 @endsection
 
