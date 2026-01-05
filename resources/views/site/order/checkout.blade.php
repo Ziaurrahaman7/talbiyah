@@ -711,14 +711,50 @@
         
         // Auto-select first address on page load
         $(document).ready(function() {
+            console.log('Checkout page loaded');
             @if (count($addresses) > 0)
+                console.log('Addresses found: {{ count($addresses) }}');
                 // If default address exists, keep it selected, otherwise select first
                 if (!$('.address-radio:checked').length) {
+                    console.log('No address selected, selecting first');
                     $('.address-radio:first').prop('checked', true).trigger('change');
+                } else {
+                    console.log('Default address already selected');
                 }
                 // Trigger change event for already selected default address to load shipping
+                console.log('Triggering change event for selected address');
                 $('.address-radio:checked').trigger('change');
+            @else
+                console.log('No addresses found');
             @endif
+        });
+        
+        // Debug address change events
+        $(document).on('change', '.address-radio', function() {
+            console.log('Address radio changed:', $(this).data('addressid'));
+            console.log('Triggering shipping calculation...');
+        });
+        
+        // Debug shipping calculation function
+        window.originalShippingTax = window.shippingTax;
+        window.shippingTax = function(tax, shipping, totalPrice, shippingIndex, displayTaxTotal) {
+            console.log('shippingTax called with:', {tax, shipping, totalPrice, shippingIndex, displayTaxTotal});
+            if (window.originalShippingTax) {
+                return window.originalShippingTax(tax, shipping, totalPrice, shippingIndex, displayTaxTotal);
+            }
+        };
+        
+        // Debug AJAX calls
+        $(document).ajaxSend(function(event, xhr, settings) {
+            if (settings.url.includes('order-get-shipping-tax')) {
+                console.log('Shipping AJAX request:', settings.data);
+            }
+        });
+        
+        $(document).ajaxComplete(function(event, xhr, settings) {
+            if (settings.url.includes('order-get-shipping-tax')) {
+                console.log('Shipping AJAX response:', xhr.responseJSON);
+            }
         });
     </script>
     <script src="{{ asset('dist/js/custom/jquery.blockUI.min.js') }}"></script>

@@ -93,6 +93,7 @@ class ShippingCalculationNew
                 $zone->ShippingZoneShippingMethod;
                 
             \Log::info('Found methods count: ' . $shippingMethods->count());
+            \Log::info('Methods data: ' . json_encode($shippingMethods->toArray()));
 
             foreach ($shippingMethods as $method) {
                 $methodCost = 0;
@@ -239,7 +240,11 @@ class ShippingCalculationNew
 
             if ($flag && $geolocale->city != '') {
                 if (! is_null($compareAddress)) {
-                    if ($geolocale->city != $compareAddress->city) {
+                    // Normalize city names by removing punctuation and converting to lowercase
+                    $normalizedGeoCity = strtolower(preg_replace('/[^a-zA-Z0-9\s]/', '', $geolocale->city));
+                    $normalizedCompareCity = strtolower(preg_replace('/[^a-zA-Z0-9\s]/', '', $compareAddress->city));
+                    
+                    if ($normalizedGeoCity != $normalizedCompareCity) {
                         $flag = false;
                         \Log::info('City mismatch: ' . $geolocale->city . ' vs ' . $compareAddress->city);
                     } else {

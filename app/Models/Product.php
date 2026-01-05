@@ -893,12 +893,23 @@ class Product extends Model
      */
     public function shipping($params = [])
     {
+        \Log::info('Product shipping method called for ID: ' . $this->id);
+        \Log::info('Product meta_shipping_id: ' . ($this->meta_shipping_id ?? 'NULL'));
+        
         $calculateShippingSetting = preference('shipping_destination');
+        \Log::info('Shipping destination setting: ' . $calculateShippingSetting);
+        
         if (! $this->isVirtual() && ! $this->isExternalProduct() && ! $this->isGroupedProduct()) {
+            \Log::info('Product is shippable, checking conditions...');
+            \Log::info('Request ship_different: ' . (request()->ship_different ?? 'not set'));
+            \Log::info('Request address ship_different: ' . (request()->address['ship_different'] ?? 'not set'));
 
-            if (in_array($calculateShippingSetting, ['billing_address', 'force_billing_address']) ||
+            // Fix: Always allow shipping calculation for billing address
+            if (in_array($calculateShippingSetting, ['billing_address', 'force_billing_address', 'shipping_address']) ||
                 $calculateShippingSetting == 'shipping_address' && isset(request()->address['ship_different']) && request()->address['ship_different'] == 'on' ||
                 $calculateShippingSetting == 'shipping_address' && isset(request()->ship_different) && request()->ship_different == 'on') {
+                
+                \Log::info('Shipping calculation conditions met');
                 $defaultAddress = $params['address'] ?? null;
                 $userId = Cart::userId();
 
@@ -908,7 +919,11 @@ class Product extends Model
                     $defaultAddress = Address::getAll()->where('id', $defaultAddress)->first();
                 }
 
-                $shippingZones = ShippingZoneShippingClass::where('shipping_class_slug', $this->meta_shipping_id)
+                // Use default shipping class if product doesn't have one
+                $shippingClass = $this->meta_shipping_id ?: 'default';
+                \Log::info('Using shipping class: ' . $shippingClass);
+                
+                $shippingZones = ShippingZoneShippingClass::where('shipping_class_slug', $shippingClass)
                     ->with(['shippingZone.shippingZoneGeolocales', 'shippingZone.shippingZoneShippingMethods'])
                     ->get();
                 \Log::info('Found shipping zones count: ' . $shippingZones->count());

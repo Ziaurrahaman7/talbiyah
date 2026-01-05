@@ -422,7 +422,12 @@ class AddToCartService
      */
     public function getTaxShipping($address = null, $from = null, $isSessionAble = false)
     {
+        \Log::info('=== getTaxShipping called ===');
+        \Log::info('Address: ' . json_encode($address));
+        \Log::info('From: ' . $from);
+        
         $cartsValue = Cart::selectedCartCollection();
+        \Log::info('Cart items count: ' . count($cartsValue));
         $tax = 0;
         $displayTaxTotal = $from == null ? preference('display_tax_totals') : '';
         $zoneCost = [];
@@ -439,7 +444,10 @@ class AddToCartService
 
         foreach ($cartsValue as $val) {
             $product = Product::select('id', 'available_from', 'available_to', 'status', 'manage_stocks', 'total_stocks', 'shop_id', 'sale_to', 'sale_price', 'regular_price', 'sale_from', 'type')->where('id', $val['id'])->first();
+            \Log::info('Processing product ID: ' . $val['id']);
+            \Log::info('Product meta_shipping_id: ' . ($product->meta_shipping_id ?? 'NULL'));
             $shipping = $product->shipping(['qty' => $val['quantity'], 'price' => $val['price'], 'address' => $address]);
+            \Log::info('Product shipping result: ' . json_encode($shipping));
             $this->shippingMethod[] = $shipping;
             $shippingCollection = collect($shipping);
             $flatRate = $shippingCollection->where('shipping_id', 3)->first();
@@ -447,6 +455,7 @@ class AddToCartService
         }
 
         $this->mergeShippingMethod($zoneCost);
+        \Log::info('After mergeShippingMethod: ' . json_encode($this->shippingMethod));
         $data = $this->getSelectedShippingAmount($this->shippingMethod);
         $shipCharge = isset($data['singleData']) && ! in_array($data['key'], $this->withOutTaxInShipping) ? $data['singleData'] : null;
 

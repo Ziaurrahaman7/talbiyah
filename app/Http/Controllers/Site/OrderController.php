@@ -598,6 +598,9 @@ class OrderController extends Controller
 
     public function getShippingTax(Request $request)
     {
+        \Log::info('=== getShippingTax called ===');
+        \Log::info('Request: ' . json_encode($request->all()));
+        
         $response = ['status' => 0];
         $cartService = new AddToCartService();
         $address = $request->address['address_id'] ?? null;
@@ -612,6 +615,9 @@ class OrderController extends Controller
         if ($getTaxShipping) {
             $response = ['status' => 1, 'tax' => $getTaxShipping['tax'], 'displayTaxTotal' => $getTaxShipping['displayTaxTotal'], 'shipping' => $getTaxShipping['shipping'], 'totalPrice' => Cart::totalPrice('selected'), 'shippingIndex' => $cartService->getShippingIndex()];
         }
+        
+        // Debug response for server
+        \Log::info('Final response: ' . json_encode($response));
 
         return $response;
     }
