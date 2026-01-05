@@ -708,6 +708,18 @@
         var dispalyTaxTotal = "{{ preference('display_tax_totals') }}";
         var calculateTaxShipping = "{{ preference('calculate_tax') }}";
         var oldShipDifferent = "{!! old('ship_different') !!}"
+        
+        // Auto-select first address on page load
+        $(document).ready(function() {
+            @if (count($addresses) > 0)
+                // If default address exists, keep it selected, otherwise select first
+                if (!$('.address-radio:checked').length) {
+                    $('.address-radio:first').prop('checked', true).trigger('change');
+                }
+                // Trigger change event for already selected default address to load shipping
+                $('.address-radio:checked').trigger('change');
+            @endif
+        });
     </script>
     <script src="{{ asset('dist/js/custom/jquery.blockUI.min.js') }}"></script>
     <script src="{{ asset('dist/js/custom/site/checkout.min.js') }}"></script>
