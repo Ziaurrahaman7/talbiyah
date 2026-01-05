@@ -89,7 +89,7 @@
         var startDate = "{!! isset($from) ? $from : 'undefined' !!}";
         var endDate = "{!! isset($to) ? $to : 'undefined' !!}";
     </script>
-    <script src="{{ asset('distdatta-able/plugins/sweetalert/js/sweetalert.min.js') }}"></script>
+    <script src="{{ asset('datta-able/plugins/sweetalert/js/sweetalert.min.js') }}"></script>
     <script src="{{ asset('dist/js/moment.min.js') }}"></script>
     <script src="{{ asset('dist/plugins/bootstrap-daterangepicker/daterangepicker.min.js') }}"></script>
     <script src="{{ asset('Modules/Ticket/Resources/assets/js/customerpanel.min.js') }}"></script>

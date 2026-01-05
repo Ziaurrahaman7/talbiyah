@@ -17,15 +17,15 @@
 
     <link rel="stylesheet" type="text/css"
         href="{{ asset('Modules/FormBuilder/Resources/assets/js/footable/css/footable.standalone.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('distdatta-able/fonts/fontawesome/css/fontawesome-all.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('datta-able/fonts/fontawesome/css/fontawesome-all.min.css') }}">
     <!-- vendor css -->
-    <link rel="stylesheet" href="{{ asset('distdatta-able/plugins/bootstrap-v5/css/bootstrap.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('distdatta-able/css/style.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('distdatta-able/fonts/feather/css/feather.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('datta-able/plugins/bootstrap-v5/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('datta-able/css/style.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('datta-able/fonts/feather/css/feather.min.css') }}">
     <link rel="stylesheet"
-        href="{{ asset('distdatta-able/plugins/jquery-scrollbar/css/jquery.scrollbar.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('distdatta-able/fonts/datta/datta-icon.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('distdatta-able/plugins/jquery-scrollbar/css/perfect-scrollbar.min.css') }}">
+        href="{{ asset('datta-able/plugins/jquery-scrollbar/css/jquery.scrollbar.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('datta-able/fonts/datta/datta-icon.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('datta-able/plugins/jquery-scrollbar/css/perfect-scrollbar.min.css') }}">
 
 
     <link rel="stylesheet" href="{{ asset('dist/css/custom.min.css') }}">
@@ -61,10 +61,10 @@
         </div>
     </div>
 
-    <script src="{{ asset('distdatta-able/plugins/bootstrap-v5/js/popper.min.js') }}"></script>
-    <script src="{{ asset('distdatta-able/plugins/bootstrap-v5/js/jquery.min.js') }}"></script>
-    <script src="{{ asset('distdatta-able/plugins/bootstrap-v5/js/slim.min.js') }}"></script>
-    <script src="{{ asset('distdatta-able/plugins/bootstrap-v5/js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('datta-able/plugins/bootstrap-v5/js/popper.min.js') }}"></script>
+    <script src="{{ asset('datta-able/plugins/bootstrap-v5/js/jquery.min.js') }}"></script>
+    <script src="{{ asset('datta-able/plugins/bootstrap-v5/js/slim.min.js') }}"></script>
+    <script src="{{ asset('datta-able/plugins/bootstrap-v5/js/bootstrap.min.js') }}"></script>
 
     <script type="text/javascript">
         window.FormBuilder = {

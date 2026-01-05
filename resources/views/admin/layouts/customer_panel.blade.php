@@ -20,15 +20,15 @@
       @endif
 
       <!-- fontawesome icon -->
-      <link rel="stylesheet" href="{{ asset('distdatta-able/fonts/fontawesome/css/fontawesome-all.min.css') }}">
+      <link rel="stylesheet" href="{{ asset('datta-able/fonts/fontawesome/css/fontawesome-all.min.css') }}">
       <!-- material icon -->
-      <link rel="stylesheet" href="{{ asset('distdatta-able/fonts/material/css/materialdesignicons.min.css') }}">
+      <link rel="stylesheet" href="{{ asset('datta-able/fonts/material/css/materialdesignicons.min.css') }}">
       <!-- flaq icon -->
-      <link rel="stylesheet" href="{{ asset('distdatta-able/fonts/flag/css/flag-icon.min.css') }}">
+      <link rel="stylesheet" href="{{ asset('datta-able/fonts/flag/css/flag-icon.min.css') }}">
       <!-- animation css -->
-      <link rel="stylesheet" href="{{ asset('distdatta-able/plugins/animation/css/animate.min.css') }}">
+      <link rel="stylesheet" href="{{ asset('datta-able/plugins/animation/css/animate.min.css') }}">
       <!-- vendor css -->
-      <link rel="stylesheet" href="{{ asset('distdatta-able/css/style.min.css') }}">
+      <link rel="stylesheet" href="{{ asset('datta-able/css/style.min.css') }}">
       <link rel="stylesheet" href="{{ asset('dist/css/custom.min.css') }}">
 
       <!--Custom CSS that was written on view-->
@@ -38,7 +38,7 @@
       @php
         if (\Cache::get(config('cache.prefix') . '-language-direction') == 'rtl') {
       @endphp
-          <link rel="stylesheet" href="{{ asset('distdatta-able/css/layouts/rtl.min.css') }}">
+          <link rel="stylesheet" href="{{ asset('datta-able/css/layouts/rtl.min.css') }}">
       @php } @endphp
     @if(file_exists(base_path('distjs/lang/' . config('app.locale') . '.js')))
         <script src="{{ asset('distjs/lang/' . config('app.locale') . '.js') }}"></script>
@@ -60,7 +60,7 @@
     </script>
 
       <!-- Required Js -->
-      <script src="{{ asset('distdatta-able/js/vendor-all.min.js') }}"></script>
+      <script src="{{ asset('datta-able/js/vendor-all.min.js') }}"></script>
 
   </head>
 
@@ -130,8 +130,8 @@
       </div>
 
       <!-- Required Js -->
-      <script src="{{ asset('distdatta-able/js/pcoded.min.js') }}"></script>
-      <script src="{{ asset('distdatta-able/plugins/select2/js/select2.full.min.js') }}"></script>
+      <script src="{{ asset('datta-able/js/pcoded.min.js') }}"></script>
+      <script src="{{ asset('datta-able/plugins/select2/js/select2.full.min.js') }}"></script>
 
       <script src="{{ asset('dist/js/moment.min.js') }}"></script>
       <script src="{{ asset('dist/plugins/bootstrap-daterangepicker/daterangepicker.min.js') }}"></script>

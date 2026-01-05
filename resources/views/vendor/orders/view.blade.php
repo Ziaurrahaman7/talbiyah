@@ -4,7 +4,7 @@
     <!-- date range picker css -->
     <link rel="stylesheet" href="{{ asset('dist/plugins/bootstrap-daterangepicker/daterangepicker.min.css') }}">
     <!-- select2 css -->
-    <link rel="stylesheet" href="{{ asset('distdatta-able/plugins/select2/css/select2.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('datta-able/plugins/select2/css/select2.min.css') }}">
 @endsection
 @section('content')
 
@@ -116,7 +116,7 @@
     </script>
     <script src="{{ asset('dist/js/custom/common.min.js') }}"></script>
     <!-- select2 JS -->
-    <script src="{{ asset('distdatta-able/plugins/select2/js/select2.full.min.js') }}"></script>
+    <script src="{{ asset('datta-able/plugins/select2/js/select2.full.min.js') }}"></script>
     <script src="{{ asset('dist/js/custom/invoice.min.js') }}"></script>
     <script src="{{ asset('dist/js/custom/jquery.blockUI.min.js') }}"></script>
     <script src="{{ asset('dist/js/custom/order.min.js') }}"></script>

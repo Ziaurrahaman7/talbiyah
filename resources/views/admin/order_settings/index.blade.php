@@ -3,7 +3,7 @@
 
 @section('css')
     {{-- Select2  --}}
-    <link rel="stylesheet" href="{{ asset('distdatta-able/plugins/select2/css/select2.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('datta-able/plugins/select2/css/select2.min.css') }}">
 @endsection
 
 @section('content')
@@ -92,7 +92,7 @@
 @endsection
 
 @section('js')
-    <script src="{{ asset('distdatta-able/plugins/select2/js/select2.full.min.js') }}"></script>
+    <script src="{{ asset('datta-able/plugins/select2/js/select2.full.min.js') }}"></script>
     <script src="{{ asset('dist/js/custom/preference.min.js') }}"></script>
     <script src="{{ asset('dist/js/custom/validation.min.js') }}"></script>
     @if(isActive('BulkPayment'))

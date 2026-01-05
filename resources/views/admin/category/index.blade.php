@@ -201,7 +201,7 @@
 @endsection
 @section('js')
     <script src="{{ asset('dist/plugins/jstree/jstree.min.js') }}"></script>
-    <script src="{{ asset('distdatta-able/plugins/sweetalert/js/sweetalert.min.js') }}"></script>
+    <script src="{{ asset('datta-able/plugins/sweetalert/js/sweetalert.min.js') }}"></script>
     <script src="{{ asset('dist/js/custom/common.min.js') }}"></script>
     <script src="{{ asset('dist/js/custom/validation.min.js') }}"></script>
     <script src="{{ asset('dist/js/custom/category.min.js') }}"></script>

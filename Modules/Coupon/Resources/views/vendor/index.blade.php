@@ -43,7 +43,7 @@
         var pdf = "{{ in_array('Modules\Coupon\Http\Controllers\Vendor\CouponController@pdf', $prms) ? '1' : '0' }}";
         var csv = "{{ in_array('Modules\Coupon\Http\Controllers\Vendor\CouponController@csv', $prms) ? '1' : '0' }}";
     </script>
-    <script src="{{ asset('distdatta-able/plugins/select2/js/select2.full.min.js') }}"></script>
+    <script src="{{ asset('datta-able/plugins/select2/js/select2.full.min.js') }}"></script>
     <script src="{{ asset('dist/js/custom/coupon.min.js') }}"></script>
     <script src="{{ asset('dist/js/custom/permission.min.js') }}"></script>
 @endsection

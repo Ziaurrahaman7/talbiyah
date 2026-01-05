@@ -2,7 +2,7 @@
 @section('page_title', __('Edit :x', ['x' => __('User')]))
 @section('css')
     {{-- Select2 --}}
-    <link rel="stylesheet" href="{{ asset('distdatta-able/plugins/select2/css/select2.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('datta-able/plugins/select2/css/select2.min.css') }}">
     <link rel="stylesheet" href="{{ asset('dist/plugins/lightbox/css/lightbox.min.css') }}">
     <link rel="stylesheet" href="{{ asset('dist/css/user-list.min.css') }}">
 @endsection

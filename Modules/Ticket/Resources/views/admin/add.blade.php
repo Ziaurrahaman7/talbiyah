@@ -2,7 +2,7 @@
 @section('page_title', __('Supports'))
 @section('css')
     {{-- select2 css --}}
-    <link rel="stylesheet" href="{{ asset('distdatta-able/plugins/summer-note/summernote-lite.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('datta-able/plugins/summer-note/summernote-lite.min.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('dist/css/invoice-style.min.css') }}">
     <link rel="stylesheet" href="{{ asset('Modules/MediaManager/Resources/assets/css/media-manager.min.css') }}">
     <link rel="stylesheet" href="{{ asset('dist/css/product.min.css') }}">
@@ -173,8 +173,8 @@
         'use strict';
         var projectId = "{{ !empty($getProject) ? $getProject : '' }}";
     </script>
-    <script src="{{ asset('distdatta-able/plugins/summer-note/summernote-lite.min.js') }}"></script>
+    <script src="{{ asset('datta-able/plugins/summer-note/summernote-lite.min.js') }}"></script>
     <script src="{{ asset('dist/js/custom/validation.min.js') }}"></script>
-    <script src="{{ asset('distdatta-able/plugins/sweetalert/js/sweetalert.min.js') }}"></script>
+    <script src="{{ asset('datta-able/plugins/sweetalert/js/sweetalert.min.js') }}"></script>
     <script src="{{ asset('Modules/Ticket/Resources/assets/js/message.min.js') }}"></script>
 @endsection

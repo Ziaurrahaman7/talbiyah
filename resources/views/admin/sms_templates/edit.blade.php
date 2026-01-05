@@ -78,7 +78,7 @@
                                                                 <!-- Escape the english details -->
                                                                 @continue ($language->short_name == 'en')
                                                                 <div class="card-header p-0">
-                                                                    <img src='{{ url('distdatta-able/fonts/flag/flags/4x3/' . getSVGFlag($language->short_name) . '.svg') }}'
+                                                                    <img src='{{ url('datta-able/fonts/flag/flags/4x3/' . getSVGFlag($language->short_name) . '.svg') }}'
                                                                         height="20" alt="{{ $language->flag }}"> <span
                                                                         class="text-uppercase f-18 font-weight-bold">{{ $language->name }}</span>
                                                                 </div>

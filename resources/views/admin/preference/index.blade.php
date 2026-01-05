@@ -4,7 +4,7 @@
   <!-- daterange picker -->
   <link rel="stylesheet" href="{{ asset('dist/plugins/bootstrap-daterangepicker/daterangepicker.min.css') }}">
  {{-- Bootstrap Tags Input --}}
- <link rel="stylesheet" href="{{ asset('distdatta-able/plugins/bootstrap-tagsinput-latest/css/bootstrap-tagsinput.min.css') }}">
+ <link rel="stylesheet" href="{{ asset('datta-able/plugins/bootstrap-tagsinput-latest/css/bootstrap-tagsinput.min.css') }}">
   <!-- Custom CSS -->
   <link rel="stylesheet" href="{{ asset('dist/css/custom.min.css') }}">
 @endsection
@@ -230,5 +230,5 @@
 @section('js')
     <script src="{{ asset('dist/js/custom/preference.min.js') }}"></script>
     <script src="{{ asset('dist/js/custom/validation.min.js') }}"></script>
-    <script src="{{ asset('distdatta-able/plugins/bootstrap-tagsinput-latest/js/bootstrap-tagsinput.min.js') }}"></script>
+    <script src="{{ asset('datta-able/plugins/bootstrap-tagsinput-latest/js/bootstrap-tagsinput.min.js') }}"></script>
 @endsection

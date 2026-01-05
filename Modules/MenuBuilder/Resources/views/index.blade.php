@@ -305,7 +305,7 @@
 		}
 	});
 </script>
-<script src="{{ asset('distdatta-able/plugins/sweetalert/js/sweetalert.min.js') }}"></script>
+<script src="{{ asset('datta-able/plugins/sweetalert/js/sweetalert.min.js') }}"></script>
 <script src="{{ asset('Modules/MenuBuilder/Resources/assets/js/scripts.min.js') }}"></script>
 <script src="{{ asset('Modules/MenuBuilder/Resources/assets/js/scripts2.min.js') }}"></script>
 <script src="{{ asset('Modules/MenuBuilder/Resources/assets/js/menu.min.js') }}"></script>

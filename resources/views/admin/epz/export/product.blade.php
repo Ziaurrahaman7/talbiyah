@@ -4,7 +4,7 @@
 
 @push('styles')
     <!-- select2 css -->
-    <link rel="stylesheet" href="{{ asset('distdatta-able/plugins/select2/css/select2.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('datta-able/plugins/select2/css/select2.min.css') }}">
 @endpush
 
 @section('content')
@@ -94,6 +94,6 @@
 
 @section('js')
     <!-- select2 JS -->
-    <script src="{{ asset('distdatta-able/plugins/select2/js/select2.full.min.js') }}"></script>
+    <script src="{{ asset('datta-able/plugins/select2/js/select2.full.min.js') }}"></script>
     <script src="{{ asset('dist/js/custom/export.min.js') }}"></script>
 @endsection

@@ -5,7 +5,7 @@
     <link rel="stylesheet" href="{{ asset('dist/plugins/lightbox/css/lightbox.min.css') }}">
 
     {{-- Color picker --}}
-    <link rel="stylesheet" href="{{ asset('distdatta-able/plugins/mini-color/css/jquery.minicolors.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('datta-able/plugins/mini-color/css/jquery.minicolors.min.css') }}">
 @endsection
 @section('content')
     <div class="col-sm-12 list-container" id="slide-add-container">
@@ -109,7 +109,7 @@
     <script src="{{ asset('dist/js/condition.min.js') }}"></script>
 
     <!-- minicolors Js -->
-    <script src="{{ asset('distdatta-able/plugins/mini-color/js/jquery.minicolors.min.js') }}"></script>
+    <script src="{{ asset('datta-able/plugins/mini-color/js/jquery.minicolors.min.js') }}"></script>
 
     <script src="{{ asset('Modules/CMS/Resources/assets/js/slider.min.js') }}"></script>
 @endsection

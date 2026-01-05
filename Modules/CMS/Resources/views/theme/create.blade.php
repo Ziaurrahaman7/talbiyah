@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="{{ asset('Modules/MediaManager/Resources/assets/css/media-manager.min.css') }}">
 
     {{-- Color picker --}}
-    <link rel="stylesheet" href="{{ asset('distdatta-able/plugins/mini-color/css/jquery.minicolors.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('datta-able/plugins/mini-color/css/jquery.minicolors.min.css') }}">
 
 @endsection
 @section('content')
@@ -31,7 +31,7 @@
     </script>
 
     <!-- minicolors Js -->
-    <script src="{{ asset('distdatta-able/plugins/mini-color/js/jquery.minicolors.min.js') }}"></script>
+    <script src="{{ asset('datta-able/plugins/mini-color/js/jquery.minicolors.min.js') }}"></script>
 
     <script src="{{ asset('dist/js/custom/validation.min.js') }}"></script>
     <script src="{{ asset('dist/js/condition.min.js') }}"></script>

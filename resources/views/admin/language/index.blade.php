@@ -63,7 +63,7 @@
                                                     <td>{{ $language->name }}</td>
                                                     <td>{{ $language->short_name }}</td>
                                                     <td>
-                                                        <img src='{{ url('distdatta-able/fonts/flag/flags/4x3/' . getSVGFlag($language->short_name) . '.svg') }}'
+                                                        <img src='{{ url('datta-able/fonts/flag/flags/4x3/' . getSVGFlag($language->short_name) . '.svg') }}'
                                                             width="32">
                                                     </td>
                                                     <td>

@@ -367,7 +367,7 @@ if (! function_exists('initializeMpdf')) {
      */
     function initializeMpdf(array $options = [])
     {
-        $path = createDirectory('distdatta-able/pdf');
+        $path = createDirectory('datta-able/pdf');
 
         $defaultConfig = (new Mpdf\Config\ConfigVariables())->getDefaults();
         $fontDirs = $defaultConfig['fontDir'];

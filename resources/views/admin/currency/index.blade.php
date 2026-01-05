@@ -4,7 +4,7 @@
     {{-- Data table --}}
     <link rel="stylesheet" href="{{ asset('dist/plugins/Responsive-2.2.5/css/responsive.dataTables.min.css') }}">
     {{-- Select2  --}}
-    <link rel="stylesheet" href="{{ asset('distdatta-able/plugins/select2/css/select2.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('datta-able/plugins/select2/css/select2.min.css') }}">
 @endsection
 
 @section('content')
@@ -286,7 +286,7 @@
 @section('js')
     <script src="{{ asset('dist/plugins/DataTables-1.10.21/js/jquery.dataTablesCus.min.js') }}"></script>
     <script src="{{ asset('dist/plugins/Responsive-2.2.5/js/dataTables.responsive.min.js') }}"></script>
-    <script src="{{ asset('distdatta-able/plugins/select2/js/select2.full.min.js') }}"></script>
+    <script src="{{ asset('datta-able/plugins/select2/js/select2.full.min.js') }}"></script>
     <script src="{{ asset('dist/js/custom/common.min.js') }}"></script>
     <script src="{{ asset('dist/js/custom/finance.min.js') }}"></script>
     <script src="{{ asset('dist/js/custom/validation.min.js') }}"></script>

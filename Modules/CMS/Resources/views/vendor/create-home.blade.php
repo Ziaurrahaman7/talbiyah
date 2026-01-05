@@ -1,7 +1,7 @@
 @extends('vendor.layouts.app')
 @section('page_title', __('Create :x', ['x' => __('Pages')]))
 @section('css')
-    <link rel="stylesheet" href="{{ asset('distdatta-able/plugins/summer-note/summernote.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('datta-able/plugins/summer-note/summernote.min.css') }}">
     <link rel="stylesheet" href="{{ asset('Modules/MediaManager/Resources/assets/css/media-manager.min.css') }}">
 @endsection
 @section('content')

@@ -2,7 +2,7 @@
 @section('page_title', __('Products'))
 @section('css')
     <link rel="stylesheet" href="{{ asset('dist/css/product.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('distdatta-able/plugins/summer-note/summernote-lite.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('datta-able/plugins/summer-note/summernote-lite.min.css') }}">
 @endsection
 @section('content')
     <!-- Main content -->
@@ -85,6 +85,6 @@
     </div>
 @endsection
 @section('js')
-    <script src="{{ asset('distdatta-able/plugins/summer-note/summernote-lite.min.js') }}"></script>
+    <script src="{{ asset('datta-able/plugins/summer-note/summernote-lite.min.js') }}"></script>
     <script src="{{ asset('dist/js/custom/product_list.min.js') }}"></script>
 @endsection

@@ -9,7 +9,7 @@
 
 @push('styles')
     <!-- summer note css -->
-    <link rel="stylesheet" href="{{ asset('distdatta-able/plugins/summer-note/summernote-lite.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('datta-able/plugins/summer-note/summernote-lite.min.css') }}">
     <!-- custom category -->
     <link rel="stylesheet" href="{{ asset('dist/css/custom-category.min.css') }}">
     <!-- date range picker css -->
@@ -125,7 +125,7 @@
     <!-- Jquery Ui JS -->
     <script src="{{ asset('dist/plugins/jQueryUI/jquery-ui.min.js') }}"></script>
     <!-- sweetalert JS -->
-    <script src="{{ asset('distdatta-able/plugins/sweetalert/js/sweetalert.min.js') }}"></script>
+    <script src="{{ asset('datta-able/plugins/sweetalert/js/sweetalert.min.js') }}"></script>
     <script src="{{ asset('dist/js/custom/delete-modal.min.js') }}"></script>
     <script src="{{ asset('dist/js/custom/product.min.js') }}"></script>
     <script src="{{ asset('dist/js/custom/jquery.blockUI.min.js') }}"></script>
@@ -164,5 +164,5 @@
     <!-- date range picker Js -->
     <script src="{{ asset('dist/plugins/bootstrap-daterangepicker/daterangepicker.min.js') }}"></script>
     <!-- summernote JS -->
-    <script src="{{ asset('distdatta-able/plugins/summer-note/summernote-lite.min.js') }}"></script>
+    <script src="{{ asset('datta-able/plugins/summer-note/summernote-lite.min.js') }}"></script>
 @endsection
